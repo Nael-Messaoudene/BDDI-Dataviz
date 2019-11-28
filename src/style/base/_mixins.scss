@@ -1,0 +1,21 @@
+// -------------- TEXT
+@mixin title() {
+  font-family   : "Calistoga", sans-serif;
+  font-size     : 120px;
+}
+
+@mixin primarySubtitle() {
+  font-family   : "Montserrat Bold", sans-serif;
+  font-size     : 60px;
+}
+
+@mixin secondarySubtitle() {
+  font-family   : "Montserrat Medium", sans-serif;
+  font-size     : 40px;
+}
+
+@mixin content() {
+  font-family   : "SF Pro", sans-serif;
+  font-size     : 20px;
+}
+

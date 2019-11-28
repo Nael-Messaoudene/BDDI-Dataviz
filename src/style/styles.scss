@@ -1,9 +1,10 @@
+@import 'base/variables';
+@import 'base/fonts';
+@import 'base/mixins';
+
 @import 'components/hello';
 
-$primary-color: white;
-$bg: black;
-h1 {
-  color: $primary-color;
-  background-color: $bg;
+body {
+  background-color: $gray;
 }
 
