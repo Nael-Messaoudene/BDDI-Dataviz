@@ -5,3 +5,4 @@ import LoadingScreen from "./scripts/loading-screen";
 const loadingscreen = ((loadingscreen) => {
     loadingscreen.animateScreens();
 })(LoadingScreen);
+
