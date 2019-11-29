@@ -33,9 +33,28 @@
     top: 50%;
     transform: translate(-50%, -50%);
 
-    &__sport-icon {
+    & > * {
       width: 200px;
       height: auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.2s ease;
+    }
+
+    &__sport-icon {
+
+    }
+
+    &__sport-icon2 {
+      opacity: 0;
+      width: 150px;
+    }
+
+    &__sport-icon3 {
+      opacity: 0;
+      width: 150px;
     }
   }
 }
