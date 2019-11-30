@@ -1,8 +1,14 @@
+// Base
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/mixins';
 
+// Components
 @import 'components/hello';
+
+// Layouts
+@import 'layouts/conversation';
+
 
 body {
   background-color: $gray;
