@@ -1,0 +1,45 @@
+.character{
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  &--bg{
+    height: 380px;
+    background-image: url("/assets/images/shape.svg");
+    background-repeat: no-repeat;
+    overflow: hidden;
+    &__img{
+      width: 209px;
+      height: 290px;
+      position: relative;
+      padding: 40px 0px 50px 20px;
+    }
+  }
+  &--infos{
+    display: flex;
+    flex-direction: column;
+    &__name{
+      @include secondarySubtitle();
+      color: $white;
+    }
+    &__sport{
+      @include content();
+      color: $gray-medium;
+    }
+  }
+}
+
+.trophies{
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  &--reward{
+    &__medal{
+      width: 30px;
+    }
+    &__number{
+      @include content();
+      font-size: 30px;
+      color: $gray-medium;
+    }
+  }
+}

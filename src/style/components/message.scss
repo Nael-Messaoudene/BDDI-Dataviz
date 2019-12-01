@@ -1,0 +1,37 @@
+.message{
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  width: 750px;
+  &--box{
+    padding: 20px 30px;
+    border-radius: 20px;
+    width: fit-content;
+    max-width: 470px ;
+    margin-bottom: 40px;
+    display: flex;
+    &__text{
+      @include content();
+      color: $white;
+      font-size: 20px;
+    }
+  }
+}
+.leftAlign{
+  align-self: flex-start;
+}
+.rightAlign{
+  align-self: flex-end;
+}
+.send{
+  background: $gray-dark;
+  &--text{
+    color: $white;
+  }
+}
+.received{
+  background: $white;
+  &--text{
+    color: $gray-dark;
+  }
+}
