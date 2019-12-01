@@ -17,10 +17,17 @@ class conversation{
 
     conversation(){
         console.log('conversation');
+
+        gsap.to('.message--box', {
+            duration: 2,
+            opacity: 1,
+            delay: 1, stagger:{
+                each: 0.9
+            } });
+
     }
     // bindEvents(){
-    //     window.onresize = ()=>{this.getDims()};
-    //     this.$container.addEventListener('mousemove', this.onMouse.bind(this));
+    //
     // }
 
 
