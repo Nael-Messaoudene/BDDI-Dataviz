@@ -55,17 +55,20 @@
     }
 
     &__sport-icon {
-
+      display: none;
+      opacity: 0;
     }
 
     &__sport-icon2 {
-      opacity: 0;
-      width: 150px;
+      path {
+        visibility: hidden;
+      }
     }
 
     &__sport-icon3 {
-      opacity: 0;
-      width: 150px;
+      path {
+        visibility: hidden;
+      }
     }
   }
 }
