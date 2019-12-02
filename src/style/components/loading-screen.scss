@@ -5,6 +5,17 @@
   position: relative;
   overflow: hidden;
 
+  .red {
+    fill: $red;
+  }
+
+  svg {
+    overflow: unset;
+    display: flex;
+    align-self: center;
+  }
+
+
   &_view1, &_view2, &_view3 {
     width:100%;
     height: 100%;
