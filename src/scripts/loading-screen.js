@@ -13,7 +13,7 @@ const LoadingScreen = {
         var tl = gsap.timeline();
         tl.to(this.view2, {x: '-100%', duration: 1, ease: "power1.out"}, 0.5);
         tl.to(this.view3, {y: '-100%', duration: 1, ease: "power1.out"}, 2.5);
-        tl.to(this.el, {opacity: '0', duration: 1, ease: "power1.out"}, 5);
+        tl.to(this.el, {y: '-100%', duration: 1, ease: "power1.out"}, 4);
     },
 
     iconsMorphing() {
