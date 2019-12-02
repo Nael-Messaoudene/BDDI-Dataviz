@@ -1,3 +1,9 @@
 import "./style/styles.scss";
+import LoadingScreen from "./scripts/loading-screen";
 
-console.log("index!");
+//Component LoadingScreen
+const loadingscreen = ((loadingscreen) => {
+    loadingscreen.iconsMorphing();
+    loadingscreen.animateScreens();
+})(LoadingScreen);
+
