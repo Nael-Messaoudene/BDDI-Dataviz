@@ -17,8 +17,6 @@ const LoadingScreen = {
     },
 
     iconsMorphing() {
-        console.log(gsap);
-        console.log(kute);
         const animationDuration = 1000;
         const reduceToSecond = 0.001;
 
