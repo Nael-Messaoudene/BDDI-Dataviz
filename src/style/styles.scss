@@ -3,10 +3,13 @@
 @import 'base/fonts';
 @import 'base/mixins';
 
-@import 'components/hello';
 @import 'components/loading-screen';
 
 body {
+  overflow: hidden;
   background-color: $gray;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
