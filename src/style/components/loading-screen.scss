@@ -4,6 +4,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  transform-origin: top;
 
   .red {
     fill: $purple;
@@ -28,16 +29,19 @@
 
   &_view2 {
     background-color: $purple;
+    transform: scaleX(0);
     top: 0;
-    right: -100%;
+    left: 0;
+    transform-origin: left;
   }
 
   &_view3 {
     background-color: $yellow;
-    bottom: -100%;
+    transform: scaleX(0);
+    top: 0;
+    left: 0;
+    transform-origin: right;
   }
-
-
 
   &-icons {
     z-index: 1;

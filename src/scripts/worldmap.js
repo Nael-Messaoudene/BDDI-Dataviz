@@ -4,6 +4,8 @@ const WorldMap = {
     el: document.querySelector('.worldmap'),
 
     initMap() {
+        const el = document.querySelector('.worldmap');
+        console.log(el);
         const wwidth = window.innerWidth;
         const wheight = window.innerHeight;
         let mx = 0;
@@ -84,11 +86,6 @@ const WorldMap = {
                 .call(d3.axisLeft(legendScale).ticks(6));
 
             csv.forEach(function(e,i) {
-                const el = document.querySelector("#d" + e.id);
-                const box = el.getBBox();
-                const elx = box.x;
-                const ely = box.y;
-
 
                 d3.select("#d" + e.id)
                     .attr("class", function() { return "country q" + quantize(Math.sqrt(+e.athletes)) + "-7"; })
