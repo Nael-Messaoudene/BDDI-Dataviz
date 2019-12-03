@@ -4,6 +4,7 @@ const Hearings = {
     el: document.querySelector('.hearings'),
 
     drawGraph() {
+
         const data = [
             {
                 name: "Olympiques",
@@ -139,8 +140,10 @@ const Hearings = {
                     .style('stroke', 'black')
                     .style("stroke-width", 0)
                     .style('fill', 'black')
+                    .transition()
+                    .duration(1000)
                     .text(`${d.hearings} millions`)
-                    .attr("x", d => xScale(d.date) + 5)
+                    .attr("x", d => xScale(d.date) + 50)
                     .attr("y", d => yScale(d.hearings) - 10);
             })
             .on("mouseout", function(d) {
@@ -170,47 +173,46 @@ const Hearings = {
 
         /* Add Axis into SVG */
         var xAxis = d3.axisBottom(xScale).ticks(5);
-        var yAxis = d3.axisLeft(yScale).ticks(5);
+        var yAxis = d3.axisLeft(yScale)
+            .ticks(5)
 
         svg.append("g")
-            .attr("class", "x axis")
+            .attr("class", "x axis hearings-graph-axisTest grid")
+            .attr("stroke-width", "0")
             .attr("transform", `translate(0, ${height-margin})`)
-            .call(xAxis);
+            .call(xAxis)
 
         svg.selectAll("path").attr("fill", "none");
 
         svg.append("g")
-            .attr("class", "y axis")
+            .attr("class", "y axis hearings-graph-axisTest")
+            .attr("fill", "white")
+            .attr("stroke-width", "0")
             .call(yAxis)
             .append('text')
             .attr("y", 15)
             .attr("transform", "rotate(-90)")
             .attr("fill", "#000")
 
-        var totalLength = path.node().getTotalLength();
-        console.log(totalLength);
-        console.log(path._groups);
-
-        totalLength = [path._groups[0][0].getTotalLength(), path._groups[0][1].getTotalLength()];
-
-        console.log(totalLength);
-
-
-
+        const totalLength = [path._groups[0][0].getTotalLength(), path._groups[0][1].getTotalLength()];
 
         d3.select(path._groups[0][0])
             .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
             .attr("stroke-dashoffset", totalLength[0])
             .transition()
-            .duration(5000)
+            .duration(6000)
+            .ease(d3.easeLinear)
             .attr("stroke-dashoffset", 0);
 
         d3.select(path._groups[0][1])
             .attr("stroke-dasharray", totalLength[1] + " " + totalLength[1] )
             .attr("stroke-dashoffset", totalLength[1])
             .transition()
-            .duration(5000)
+            .ease(d3.easeLinear)
+            .duration(6000)
             .attr("stroke-dashoffset", 0);
+
+
 
 
     },

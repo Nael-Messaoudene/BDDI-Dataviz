@@ -1,5 +1,4 @@
 .hearings {
-  background-color: white;
 
   .wrap {
     padding: 224px 0;
@@ -8,21 +7,30 @@
   &__title {
     font-family: Calistoga;
     font-size: 60px;
+    color: white;
+    text-align: center;
+    width:58%;
+    margin: 0 auto;
+    line-height: 65px;
   }
 
   &-content {
-    margin-top: 66px;
+    margin-top: 90px;
     display: flex;
   }
 
   &-graph {
-    background-color: white;
     margin-right: 40px;
 
     &-hoverCircle {
       background-color: red;
       font-size: 16px;
       font-family: "Montserrat Bold";
+    }
+
+    &-axisTest {
+      @include content();
+      color: white;
     }
 
     &-legend {
@@ -55,6 +63,7 @@
       font-size: 20px;
       @include content();
       margin-top: 35px;
+      color: $yellow;
     }
   }
 
