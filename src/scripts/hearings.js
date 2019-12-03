@@ -8,23 +8,23 @@ const Hearings = {
             {
                 name: "Olympiques",
                 values: [
-                    {date: "2008", hearings: "37.700000"},
-                    {date: "2010", hearings: "41.200000"},
-                    {date: "2012", hearings: "46.300000"},
-                    {date: "2014", hearings: "43.400000"},
-                    {date: "2016", hearings: "41.400000"},
-                    {date: "2018", hearings: "36.700000"},
+                    {place: "PEKIN", date: "2008", hearings: "37.700000"},
+                    {place: "VANCOUVER", date: "2010", hearings: "41.200000"},
+                    {place: "LONDRES", date: "2012", hearings: "46.300000"},
+                    {place: "SOCHI", date: "2014", hearings: "43.400000"},
+                    {place: "RIO", date: "2016", hearings: "41.400000"},
+                    {place: "PYEONGCHANG",date: "2018", hearings: "36.700000"},
                 ]
             },
             {
                 name: "Paralympiques",
                 values: [
-                    {date: "2008", hearings: "3.292000"},
-                    {date: "2010", hearings: "4.052000"},
-                    {date: "2012", hearings: "9.660000"},
-                    {date: "2014", hearings: "5.871000"},
-                    {date: "2016", hearings: "16.858000"},
-                    {date: "2018", hearings: "5.864000"},
+                    {place: "PEKIN", date: "2008", hearings: "3.292000"},
+                    {place: "VANCOUVER", date: "2010", hearings: "4.052000"},
+                    {place: "LONDRES", date: "2012", hearings: "9.660000"},
+                    {place: "SOCHI", date: "2014", hearings: "5.871000"},
+                    {place: "RIO", date: "2016", hearings: "16.858000"},
+                    {place: "PYEONGCHANG", date: "2018", hearings: "5.864000"},
                 ]
             },
         ];
@@ -77,7 +77,7 @@ const Hearings = {
         let lines = svg.append('g')
             .attr('class', 'lines');
 
-        lines.selectAll('.line-group')
+        let path = lines.selectAll('.line-group')
             .data(data).enter()
             .append('g')
             .attr('class', 'line-group')
@@ -135,8 +135,10 @@ const Hearings = {
                 d3.select(this)
                     .style("cursor", "pointer")
                     .append("text")
-                    .attr("class", "text")
-                    .style("stroke-width", 1.2)
+                    .attr("class", "hearings-graph-hoverCircle text")
+                    .style('stroke', 'black')
+                    .style("stroke-width", 0)
+                    .style('fill', 'black')
                     .text(`${d.hearings} millions`)
                     .attr("x", d => xScale(d.date) + 5)
                     .attr("y", d => yScale(d.hearings) - 10);
@@ -184,6 +186,32 @@ const Hearings = {
             .attr("y", 15)
             .attr("transform", "rotate(-90)")
             .attr("fill", "#000")
+
+        var totalLength = path.node().getTotalLength();
+        console.log(totalLength);
+        console.log(path._groups);
+
+        totalLength = [path._groups[0][0].getTotalLength(), path._groups[0][1].getTotalLength()];
+
+        console.log(totalLength);
+
+
+
+
+        d3.select(path._groups[0][0])
+            .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
+            .attr("stroke-dashoffset", totalLength[0])
+            .transition()
+            .duration(5000)
+            .attr("stroke-dashoffset", 0);
+
+        d3.select(path._groups[0][1])
+            .attr("stroke-dasharray", totalLength[1] + " " + totalLength[1] )
+            .attr("stroke-dashoffset", totalLength[1])
+            .transition()
+            .duration(5000)
+            .attr("stroke-dashoffset", 0);
+
 
     },
 
