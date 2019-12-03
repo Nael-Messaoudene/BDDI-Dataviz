@@ -2,3 +2,13 @@
 //  background-color: #C7D9D9;
 //
 //}
+.box{
+  transform-origin: bottom;
+}
+.rect-item{
+  transform-origin: bottom;
+}
+.sport-info{
+  @include primarySubtitle();
+  font-size: 18px;
+}
