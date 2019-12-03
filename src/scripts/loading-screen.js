@@ -16,7 +16,7 @@ const LoadingScreen = {
         const tl = gsap.timeline();
         tl.to(this.view2, {scaleX: 1, duration: .6, ease: "expo.out"}, .6);
         tl.to(this.view3, {scaleX: 1, duration: .6, ease: "expo.out"}, 1.5);
-        tl.to(this.main, {scaleY: 0, duration: 1, ease: "expo.out"}, 2);
+        tl.to(this.main, {scaleY: 0, height:0, duration: 1, ease: "expo.out"}, 2);
         tl.to(this.icons, {opacity:0, duration: .3, ease: "expo.out"}, 2);
         tl.to(this.body, {overflow:"initial"}, 3);
     },
