@@ -1,0 +1,54 @@
+.message{
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  width: 750px;
+  padding: 0px 30px;
+  @media (max-width: 1080px) {
+    width: 100%;
+    max-width: unset;
+  }
+  &--box{
+    padding: 20px 30px;
+    border-radius: 20px;
+    width: fit-content;
+    max-width: 470px ;
+    margin-bottom: 40px;
+    display: flex;
+    opacity: 0;
+    &__text{
+      @include content();
+      color: $white;
+      font-size: 20px;
+    }
+  }
+}
+.leftAlign{
+  align-self: flex-start;
+}
+.rightAlign{
+  align-self: flex-end;
+}
+.send{
+  background: $gray-dark;
+  &--text{
+    color: $white;
+  }
+}
+.received{
+  background: $white;
+  &--text{
+    color: $gray-dark;
+  }
+}
+.desktop-msg{
+  @media( max-width: 1080px){
+    display: none;
+  }
+}
+.mobile-msg{
+  display: flex;
+  @media (min-width: 1081px) {
+    display: none;
+  }
+}

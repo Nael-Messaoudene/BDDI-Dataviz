@@ -1,0 +1,64 @@
+.character{
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  .shape-2{
+    background-image: url("/assets/images/shape-2.svg");
+  }
+  &--bg{
+    height: 380px;
+    background-image: url("/assets/images/shape.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    &__img{
+      width: 209px;
+      height: 290px;
+      position: relative;
+      padding: 40px 0px 50px 20px;
+    }
+  }
+  &--infos{
+    display: flex;
+    flex-direction: column;
+    &__name{
+      @include secondarySubtitle();
+      color: $white;
+      font-size: 25px;
+    }
+    &__sport{
+      @include content();
+      color: $gray-medium;
+    }
+  }
+}
+
+.trophies{
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  @media (max-width: 1080px) {
+    display: none;
+  }
+  &--reward{
+    display: flex;
+    margin-bottom: 10px;
+    &__medal{
+      width: 30px;
+    }
+    &__number{
+      @include content();
+      font-size: 30px;
+      color: $gray-medium;
+      align-self: flex-end;
+      margin-left: 10px;
+    }
+  }
+}
+
+.wrap-characters{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  width: 100%;
+}
