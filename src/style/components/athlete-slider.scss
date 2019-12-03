@@ -2,10 +2,8 @@
   padding: 200px 0;
   text-align: center;
 
-  .flickity-viewport, .flickity-slider {
-    &:focus {
-      outline: none !important;
-    }
+  .flickity-enabled:focus .flickity-viewport {
+    outline: none;
   }
 
   &-title {
@@ -16,13 +14,15 @@
   }
 
   &-slides {
-    justify-content: center;
 
     .is-selected {
 
+
       .athlete-slider-slides-item__image {
-        width: 446px;
-        height: 446px;
+
+        img {
+          width: 50%;
+        }
 
         &:before {
           content:'';
@@ -43,6 +43,8 @@
     }
 
     &-item {
+
+      width: 200px;
       &[data-color="yellow"] {
         .athlete-slider-slides-item__image {
           background-color: rgba(255, 208, 88, 0.1);
@@ -84,8 +86,7 @@
           color: rgba(131, 56, 236, 1);
         }
       }
-
-      width: 25%;
+      margin: 0 25px;
       text-align: center;
       &__image {
         background-color: red;
@@ -93,6 +94,17 @@
         width: 191px;
         height: 191px;
         margin: 0 auto 50px auto;
+
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          path {
+            fill:red;
+          }
+        }
       }
 
       &__name {

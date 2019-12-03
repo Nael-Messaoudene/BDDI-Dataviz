@@ -10,6 +10,8 @@ const loadingscreen = ((loadingscreen) => {
 
 //Component AthleteSlider
 const athleteslider = ((athleteslider) => {
+    athleteslider.getAthletesDatas();
+    athleteslider.displayAthletes();
     athleteslider.slideAthletes();
 })(AthleteSlider);
 
