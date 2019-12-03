@@ -1,13 +1,31 @@
+// Base
 @import 'base/reset';
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/mixins';
 
+// Components
+@import 'components/characters';
+@import 'components/message';
 @import 'components/loading-screen';
 
+// Layouts
+@import 'layouts/conversation';
+
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  min-height: 100%;
+}
 body {
-  overflow: hidden;
   background-color: $gray;
+}
+#app{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 h1, h2, h3 {
