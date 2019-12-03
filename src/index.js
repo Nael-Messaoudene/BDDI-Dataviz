@@ -1,7 +1,15 @@
 import "./style/styles.scss";
+import LoadingScreen from "./scripts/loading-screen";
 
-console.log("index!");
 import conversation from './scripts/conversation'
+
+
+
+//Component LoadingScreen
+const loadingscreen = ((loadingscreen) => {
+    loadingscreen.iconsMorphing();
+    loadingscreen.animateScreens();
+})(LoadingScreen);
 
 const App = {
 
@@ -11,5 +19,4 @@ const App = {
         });
     }
 };
-
 App.init();

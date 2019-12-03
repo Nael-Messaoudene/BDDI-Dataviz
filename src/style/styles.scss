@@ -1,12 +1,13 @@
 // Base
+@import 'base/reset';
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/mixins';
 
 // Components
-@import 'components/hello';
 @import 'components/characters';
 @import 'components/message';
+@import 'components/loading-screen';
 
 // Layouts
 @import 'layouts/conversation';
@@ -19,7 +20,7 @@ html,body{
   min-height: 100%;
 }
 body {
-  //background-color: $gray;
+  background-color: $gray;
 }
 #app{
   width: 100%;
@@ -27,3 +28,6 @@ body {
   overflow: hidden;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
