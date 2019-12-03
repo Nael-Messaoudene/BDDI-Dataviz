@@ -1,6 +1,7 @@
 [
   {
     "name": "Benjamin DAVIET",
+    "color": "green",
     "sport": "Biathlon",
     "or_medals": "3",
     "silver_medals": "2",
@@ -13,6 +14,7 @@
   },
   {
     "name": "Marie BOCHET",
+    "color": "yellow",
     "sport": "Para ski alpin",
     "or_medals": "8",
     "silver_medals": "0",
@@ -25,6 +27,7 @@
   },
   {
     "name": "Cécile HERNANDEZ",
+    "color": "purple",
     "sport": "para snowboard",
     "or_medals": "0",
     "silver_medals": "2",
@@ -37,6 +40,7 @@
   },
   {
     "name": "Arthur BEAUCHET",
+    "color": "green",
     "sport": "Para ski alpin",
     "or_medals": "0",
     "silver_medals": "4",
@@ -49,6 +53,7 @@
   },
   {
     "name": "Jordan BROISIN",
+    "color": "yellow",
     "sport": "Para ski alpin",
     "or_medals": "0",
     "silver_medals": "0",
@@ -61,6 +66,7 @@
   },
   {
     "name": "Anthony CHALENÇON",
+    "color": "purple",
     "sport": "Biathlon",
     "or_medals": "1",
     "silver_medals": "0",
@@ -73,6 +79,7 @@
   },
   {
     "name": "Thomas CLARION",
+    "color": "green",
     "sport": "Biathlon",
     "or_medals": "1",
     "silver_medals": "0",
@@ -85,6 +92,7 @@
   },
   {
     "name": "Thomas DUBOIS",
+    "color": "yellow",
     "sport": "Biathlon",
     "or_medals": "0",
     "silver_medals": "0",
@@ -97,6 +105,7 @@
   },
   {
     "name": "Frédéric FRANÇOIS",
+    "color": "purple",
     "sport": "Para ski alpin",
     "or_medals": "0",
     "silver_medals": "1",
@@ -109,6 +118,7 @@
   },
   {
     "name": "Maxime MONTAGGIAONI",
+    "color": "green",
     "sport": "para snowboard",
     "or_medals": "0",
     "silver_medals": "0",
@@ -121,6 +131,7 @@
   },
   {
     "name": "Julien ROULET",
+    "color": "yellow",
     "sport": "para snowboard",
     "or_medals": "0",
     "silver_medals": "0",
@@ -133,6 +144,7 @@
   },
   {
     "name": "Yohann TABERLET",
+    "color": "purple",
     "sport": "para ski alpin",
     "or_medals": "0",
     "silver_medals": "0",

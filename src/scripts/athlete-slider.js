@@ -31,7 +31,13 @@ const AthleteSlider = {
                 console.log(this.athletes);
 
                 this.athletes.forEach(athlete => {
-                    console.log(athlete.name);
+                    this.el.insertAdjacentHTML('beforeend',
+                        '<div class="athlete-slider-slides-item" data-color="'+athlete.color+'">' +
+                        '                <div class="athlete-slider-slides-item__image">' +
+                        '                    <img src="'+'skiing.c962b042'+'.svg'+'"></div>' +
+                        '                <div class="athlete-slider-slides-item__name">' + athlete.name +
+                        '                </div>' +
+                        '            </div>');
                 });
             })
             .catch(error => {
@@ -40,13 +46,19 @@ const AthleteSlider = {
     },
 
     slideAthletes()  {
-        var flkty = new Flickity( this.el, {
-            // options
-            prevNextButtons: false,
-            pageDots: false,
-            wrapAround: true
 
-        });
+        this.request({url: this.athleteDatas})
+            .then(() => {
+                var flkty = new Flickity( this.el, {
+                    // options
+                    prevNextButtons: false,
+                    pageDots: false,
+                    wrapAround: true
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 };
 

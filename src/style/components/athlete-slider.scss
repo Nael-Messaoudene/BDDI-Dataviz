@@ -2,7 +2,7 @@
   padding: 200px 0;
   text-align: center;
 
-  .flickity-enabled:focus .flickity-viewport {
+  .flickity-enabled:focus, .flickity-viewport:focus {
     outline: none;
   }
 
@@ -14,6 +14,8 @@
   }
 
   &-slides {
+
+    text-align: center;
 
     .is-selected {
 
@@ -93,7 +95,7 @@
         position: relative;
         width: 191px;
         height: 191px;
-        margin: 0 auto 50px auto;
+        margin: 0 auto 30px auto;
 
         img {
           position: absolute;
@@ -109,7 +111,7 @@
 
       &__name {
         @include primarySubtitle();
-        font-size: 40px;
+        font-size: 20px;
         color: #8338ec;
         display: none;
       }
