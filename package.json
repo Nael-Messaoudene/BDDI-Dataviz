@@ -20,7 +20,8 @@
     "kute.js": "^1.6.6",
     "posthtml-include": "^1.3.2",
     "posthtml-parser": "^0.4.2",
-    "scripts": "^0.1.0"
+    "scripts": "^0.1.0",
+    "scrollmagic": "^2.0.7"
   },
   "devDependencies": {
     "cssnano": "^4.1.10",
