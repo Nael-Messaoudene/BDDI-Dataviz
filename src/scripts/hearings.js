@@ -63,7 +63,7 @@ const Hearings = {
             .domain([0, d3.max(data[0].values, d => d.hearings)])
             .range([height-margin, 0]);
 
-        var color = ["#64DFC7", "#FF455E"];
+        var color = ["#64DFC7", "#FFD058"];
 
         var svg = d3.select(".hearings-graph").append("svg")
             .attr("width", (width+margin)+"px")
