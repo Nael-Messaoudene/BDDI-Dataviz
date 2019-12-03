@@ -1,14 +1,14 @@
 #worldmap {
   transform: scale(.8);
 
-  .q0-7{fill: $green-0;}
-  .q1-7{fill: $green-10;}
-  .q2-7{fill: $green-20;}
-  .q3-7{fill: $red-30;}
-  .q4-7{fill: $red-40;}
-  .q5-7{fill: $red-50;}
-  .q6-7{fill: $red-60;}
-  .q7-7{fill: white;}
+  .q0-7{fill: $purple-0;}
+  .q1-7{fill: $purple-10;}
+  .q2-7{fill: $purple-20;}
+  .q3-7{fill: $purple-30;}
+  .q4-7{fill: $purple-40;}
+  .q5-7{fill: $purple-50;}
+  .q6-7{fill: $purple-60;}
+  .q7-7{fill: $white;}
   path {
     transform-origin: center;
     transition: .3s fill ease-in-out;
@@ -28,7 +28,7 @@
       display: none;
     }
     text {
-      color: white;
+      color: $white;
     }
   }
   .tooltip {
