@@ -1,0 +1,89 @@
+.athlete-slider {
+  padding: 200px 0;
+  text-align: center;
+
+  &-title {
+    @include title();
+    font-size: 60px;
+    color: white;
+    margin-bottom: 115px;
+  }
+
+  &-slides {
+    justify-content: center;
+
+    .is-selected {
+
+      .athlete-slider-slides-item__image {
+        width: 446px;
+        height: 446px;
+
+        &:before {
+          content:'';
+          position: absolute;
+          height: 110%;
+          width: 110%;
+          border: 1px solid red;
+          border-radius: 8px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .athlete-slider-slides-item__name {
+        display: block;
+      }
+    }
+
+    &-item {
+      &[data-color="yellow"] {
+        .athlete-slider-slides-item__image {
+          background-color: rgba(255, 208, 88, 0.1);
+        }
+
+        .athlete-slider-slides-item__name {
+          color: rgba(255, 208, 88, 1);
+        }
+      }
+
+      &[data-color="green"] {
+        .athlete-slider-slides-item__image {
+          background-color: rgba(100, 223, 199, 0.1);
+        }
+
+        .athlete-slider-slides-item__name {
+          color: rgba(100, 223, 199, 1);
+        }
+      }
+
+      &[data-color="purple"] {
+        .athlete-slider-slides-item__image {
+          background-color: rgba(131, 56, 236, 0.1);
+        }
+
+        .athlete-slider-slides-item__name {
+          color: rgba(131, 56, 236, 1);
+        }
+      }
+
+      width: 25%;
+      text-align: center;
+      &__image {
+        background-color: red;
+        position: relative;
+        width: 191px;
+        height: 191px;
+        margin: 0 auto 50px auto;
+      }
+
+      &__name {
+        @include primarySubtitle();
+        font-size: 20px;
+        color: #8338ec;
+        display: none;
+      }
+    }
+
+  }
+}

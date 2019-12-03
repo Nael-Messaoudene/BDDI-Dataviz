@@ -5,8 +5,10 @@
 
 @import 'components/hello';
 @import 'components/loading-screen';
+@import 'components/athlete-slider';
 
 body {
   background-color: $gray;
+  overflow-x: hidden;
 }
 
