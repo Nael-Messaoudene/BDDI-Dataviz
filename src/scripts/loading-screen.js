@@ -1,9 +1,10 @@
 import gsap from "gsap";
 
-const kute = require("kute.js");
+const KUTE = require("kute.js");
 require("kute.js/kute-svg");
 
 const LoadingScreen = {
+    body        : document.body,
     main        : document.querySelector('.loading-screen'),
     view1       : document.querySelector('.loading-screen_view1'),
     view2       : document.querySelector('.loading-screen_view2'),
@@ -17,6 +18,7 @@ const LoadingScreen = {
         tl.to(this.view3, {scaleX: 1, duration: .6, ease: "expo.out"}, 1.5);
         tl.to(this.main, {scaleY: 0, duration: 1, ease: "expo.out"}, 2);
         tl.to(this.icons, {opacity:0, duration: .3, ease: "expo.out"}, 2);
+        tl.to(this.body, {overflow:"initial"}, 3);
     },
 
     iconsMorphing() {
