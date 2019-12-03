@@ -1,9 +1,8 @@
 import "./style/styles.scss";
 import LoadingScreen from "./scripts/loading-screen";
+import Hearings from "./scripts/hearings";
 
 import conversation from './scripts/conversation'
-
-
 
 //Component LoadingScreen
 const loadingscreen = ((loadingscreen) => {
@@ -20,3 +19,10 @@ const App = {
     }
 };
 App.init();
+
+//Component Hearings
+const hearings = ((hearings) => {
+    hearings.drawGraph();
+})(Hearings);
+
+

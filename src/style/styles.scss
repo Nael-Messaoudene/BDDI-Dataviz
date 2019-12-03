@@ -3,11 +3,13 @@
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/mixins';
+@import 'base/global';
 
 // Components
 @import 'components/characters';
 @import 'components/message';
 @import 'components/loading-screen';
+@import 'components/hearings';
 
 // Layouts
 @import 'layouts/conversation';
