@@ -1,4 +1,10 @@
+.worldmap {
+
+}
+
 #worldmap {
+  position: relative;
+
   transform: scale(.8);
 
   .q0-7{fill: $purple-0;}
@@ -9,6 +15,9 @@
   .q5-7{fill: $purple-50;}
   .q6-7{fill: $purple-60;}
   .q7-7{fill: $white;}
+  svg {
+    overflow: initial;
+  }
   path {
     transform-origin: center;
     transition: .3s fill ease-in-out;
@@ -34,15 +43,12 @@
   .tooltip {
       position: absolute;
       text-align: center;
+      color: $white;
       padding: 40px 20px;
       width: 275px;
       background-color: $gray;
       border: 1px solid $white;
       border-radius: 20px;
       pointer-events: none;
-
-    h3 {
-
-    }
   }
 }
