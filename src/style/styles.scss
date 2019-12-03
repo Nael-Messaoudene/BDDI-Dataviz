@@ -1,9 +1,11 @@
+@import 'base/reset';
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/mixins';
 
 @import 'components/hello';
 @import 'components/worldmap';
+@import 'components/loading-screen';
 
 body {
   background-color: $gray;

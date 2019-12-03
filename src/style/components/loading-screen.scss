@@ -1,0 +1,76 @@
+.loading-screen {
+  color: black;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .red {
+    fill: $red;
+  }
+
+  svg {
+    overflow: unset;
+    display: flex;
+    align-self: center;
+  }
+
+
+  &_view1, &_view2, &_view3 {
+    width:100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &_view1 {
+    background-color: $green;
+  }
+
+  &_view2 {
+    background-color: $red;
+    top: 0;
+    right: -100%;
+  }
+
+  &_view3 {
+    background-color: $yellow;
+    bottom: -100%;
+  }
+
+
+
+  &-icons {
+    z-index: 1;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    & > * {
+      width: 200px;
+      height: auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.2s ease;
+    }
+
+    &__sport-icon {
+      display: none;
+      opacity: 0;
+    }
+
+    &__sport-icon2 {
+      path {
+        visibility: hidden;
+      }
+    }
+
+    &__sport-icon3 {
+      path {
+        visibility: hidden;
+      }
+    }
+  }
+}
