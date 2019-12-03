@@ -15,10 +15,9 @@ class athleteNumber {
 
         let svgWidth = 500;
         let svgHeight = 300;
-
         const radius =  10;
-
         const margin =  10;
+
         let svg = d3.select('svg')
             .attr("width", svgWidth + 2  * margin)
             .attr("height", svgHeight )
@@ -41,13 +40,10 @@ class athleteNumber {
         let barPadding = 15;
         let barWidth = (svgWidth / dataset.length);
 
-
-
         const barGroups = svg.selectAll()
             .data(dataset)
             .enter()
-            .append('g')
-
+            .append('g');
 
         barGroups
             .append("rect")
@@ -68,7 +64,7 @@ class athleteNumber {
             .attr('x', svgWidth / 2 + margin)
             .attr('y', 40)
             .attr('text-anchor', 'middle')
-            .text((g) => (g.sport))
+            .text((g) => (g.sport));
 
         const allG = d3.selectAll('g');
 
@@ -80,17 +76,10 @@ class athleteNumber {
             .attr('class', 'rect-item');
 
 
-        console.log(allRect);
+        let rectItem =document.getElementsByClassName('rect-item');
 
-
-
-        let test =document.querySelectorAll('.rect-item');
-
-        console.log(test);
-
-        test.forEach( (e,i)=>{
-            console.log(dataset[i].value);
-            gsap.fromTo('.rect-item',{ height: 0}, {duration:1, height: dataset[i].value ,stagger:{each: 0.9}});
+        Array.from(rectItem).forEach( (item,i)=>{
+            gsap.fromTo(rectItem[i],{height: 0}, {duration:2, height: dataset[i].value ,stagger:{each: 3}});
         });
 
 
