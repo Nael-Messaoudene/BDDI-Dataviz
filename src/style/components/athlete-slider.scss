@@ -2,6 +2,12 @@
   padding: 200px 0;
   text-align: center;
 
+  .flickity-viewport, .flickity-slider {
+    &:focus {
+      outline: none !important;
+    }
+  }
+
   &-title {
     @include title();
     font-size: 60px;
@@ -21,8 +27,8 @@
         &:before {
           content:'';
           position: absolute;
-          height: 110%;
-          width: 110%;
+          height: 108%;
+          width: 108%;
           border: 1px solid red;
           border-radius: 8px;
           left: 50%;
@@ -40,6 +46,10 @@
       &[data-color="yellow"] {
         .athlete-slider-slides-item__image {
           background-color: rgba(255, 208, 88, 0.1);
+
+          &:before {
+            border-color: rgba(255, 208, 88, 1)
+          }
         }
 
         .athlete-slider-slides-item__name {
@@ -50,6 +60,10 @@
       &[data-color="green"] {
         .athlete-slider-slides-item__image {
           background-color: rgba(100, 223, 199, 0.1);
+
+          &:before {
+            border-color: rgba(100, 223, 199, 1)
+          }
         }
 
         .athlete-slider-slides-item__name {
@@ -60,6 +74,10 @@
       &[data-color="purple"] {
         .athlete-slider-slides-item__image {
           background-color: rgba(131, 56, 236, 0.1);
+
+          &:before {
+            border-color: rgba(131, 56, 236, 1)
+          }
         }
 
         .athlete-slider-slides-item__name {
@@ -79,7 +97,7 @@
 
       &__name {
         @include primarySubtitle();
-        font-size: 20px;
+        font-size: 40px;
         color: #8338ec;
         display: none;
       }

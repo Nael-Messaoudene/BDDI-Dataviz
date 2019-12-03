@@ -9,7 +9,8 @@ const AthleteSlider = {
             contain: true,
             infinite: true,
             wrapAround: true,
-            pageDots: false
+            pageDots: false,
+            prevNextButtons: false,
         });
     }
 };
