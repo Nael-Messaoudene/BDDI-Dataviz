@@ -29,12 +29,12 @@ const Hearings = {
             },
         ];
 
-        const width = 600;
+        const width = 800;
         const height = 340;
         const margin = 50;
         const duration = 250;
 
-        const lineOpacity = "0.6";
+        const lineOpacity = "1";
         const lineOpacityHover = "0.85";
         const otherLinesOpacityHover = "0.1";
         const lineStroke = "3px";
@@ -49,7 +49,7 @@ const Hearings = {
         data.forEach(function(d) {
             d.values.forEach(function(d) {
                 d.date = parseDate(d.date);
-                d.price = +d.price;
+                d.hearings = +d.hearings;
             });
         });
 
@@ -62,7 +62,7 @@ const Hearings = {
             .domain([0, d3.max(data[0].values, d => d.hearings)])
             .range([height-margin, 0]);
 
-        var color = d3.scaleOrdinal(d3.schemeCategory10);
+        var color = ["#64DFC7", "#FF455E"];
 
         var svg = d3.select(".hearings-graph").append("svg")
             .attr("width", (width+margin)+"px")
@@ -81,14 +81,15 @@ const Hearings = {
             .data(data).enter()
             .append('g')
             .attr('class', 'line-group')
+            .style("stroke-width", lineStroke)
             .on("mouseover", function(d, i) {
                 svg.append("text")
                     .attr("class", "title-text")
-                    .style("fill", color(i))
+                    .style("fill", color[i])
                     .text(d.name)
                     .attr("text-anchor", "middle")
                     .attr("x", (width-margin)/2)
-                    .attr("y", 5);
+                    .attr("y", 130);
             })
             .on("mouseout", function(d) {
                 svg.select(".title-text").remove();
@@ -96,8 +97,9 @@ const Hearings = {
             .append('path')
             .attr('class', 'line')
             .attr('d', d => line(d.values))
-            .style('stroke', (d, i) => color(i))
+            .style('stroke', (d, i) => color[i])
             .style('opacity', lineOpacity)
+
             .on("mouseover", function(d) {
                 d3.selectAll('.line')
                     .style('opacity', otherLinesOpacityHover);
@@ -122,7 +124,9 @@ const Hearings = {
         lines.selectAll("circle-group")
             .data(data).enter()
             .append("g")
-            .style("fill", (d, i) => color(i))
+            .style("fill", "white")
+            .style("stroke", (d, i) => color[i])
+            .style("stroke-width", 3)
             .selectAll("circle")
             .data(d => d.values).enter()
             .append("g")
@@ -132,7 +136,8 @@ const Hearings = {
                     .style("cursor", "pointer")
                     .append("text")
                     .attr("class", "text")
-                    .text(`${d.price}`)
+                    .style("stroke-width", 1.2)
+                    .text(`${d.hearings} millions`)
                     .attr("x", d => xScale(d.date) + 5)
                     .attr("y", d => yScale(d.hearings) - 10);
             })
@@ -179,7 +184,6 @@ const Hearings = {
             .attr("y", 15)
             .attr("transform", "rotate(-90)")
             .attr("fill", "#000")
-            .text("Millions de téléspectateurs");
 
     },
 

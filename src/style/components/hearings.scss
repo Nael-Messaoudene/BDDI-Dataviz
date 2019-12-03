@@ -41,6 +41,15 @@
         color: $red;
       }
     }
+
+    &-alert {
+      padding: 20px 23px;
+      background-color: rgba(255,208,88,0.1);
+      display: inline-block;
+      font-size: 20px;
+      @include content();
+      margin-top: 35px;
+    }
   }
 
   &-description {
@@ -49,6 +58,7 @@
     border-radius: 12px;
     box-shadow: 0 6px 22px 0 rgba(82, 82, 82, 0.08);
     margin-top: 58px;
+    height: fit-content;
 
     p {
       font-family: 'Montserrat Bold';
