@@ -13,7 +13,7 @@ class athleteNumber {
 
     chart(){
 
-        let svgWidth = 500;
+        let svgWidth = 420;
         let svgHeight = 500;
         const radius =  10;
         const margin =  10;
@@ -37,66 +37,12 @@ class athleteNumber {
                 color: '#64dfc7',
                 numberAthleteOlympics: '12',
                 allAthleteOlympics: '570',
-                ratio : '2.11%',
                 ratioValue: '180'
             }
             ];
 
         let barPadding = 15;
         let barWidth = (svgWidth / dataset.length);
-        //
-        // var y = d3.scaleLinear()
-        //     .domain([0, 400])
-        //     .range([ svgHeight, 0]);
-        //
-        // const barGroups = svg.selectAll()
-        //     .data(dataset)
-        //     .enter()
-        //     .append('g')
-        //     .attr("transform", "translate(0," + svgHeight + ")")
-        // ;
-        //
-        // barGroups
-        //     .append("rect")
-        //
-        //     .attr("rx", radius)
-        //     .attr("ry", radius)
-        //     .attr('y',  y(0))
-        //     .attr('height', (g) =>  (g.value))
-        //     .attr("width", barWidth - barPadding)
-        //     .style("fill",  (g) => (g.color))
-        //     .attr("transform-origin", '0% 0%')
-        //     .attr("transform", function (d, i) {
-        //         let translate = [barWidth * i, 0];
-        //         return "translate("+ translate +")";
-        //     });
-        //
-        // barGroups.append('text')
-        //     .attr('class', 'sport-info')
-        //     .attr('x', svgWidth / 2 + margin)
-        //     .attr('y', 40)
-        //     .attr('text-anchor', 'middle')
-        //     .text((g) => (g.sport));
-        //
-        // const allG = d3.selectAll('g');
-        //
-        // allG
-        //     .attr("class", "box");
-        //
-        // const allRect = d3.selectAll('.box rect');
-        // allRect
-        //     .attr('class', 'rect-item');
-        //
-        //
-        //
-        // let rectItem =document.getElementsByClassName('rect-item');
-        //
-        // Array.from(rectItem).forEach( (item,i)=>{
-        //
-        //     gsap.fromTo(rectItem[i], {height: 0} ,{duration:2, delay: 1,height: dataset[i].value ,stagger:{each: 3}, transformOrigin: "0% 0%"});
-        // });
-        //
-        //
 
 
 
@@ -105,7 +51,6 @@ class athleteNumber {
             .attr("width", svgWidth + 2  * margin)
             .attr("height", svgHeight )
             .attr("class", "bar-chart");
-
 
         var bars = svg.selectAll("rect")
             .data(dataset)
@@ -122,25 +67,11 @@ class athleteNumber {
             .attr("width", barWidth - barPadding)
             .attr("height", 1);
 
-        var text = svg.selectAll("text")
-            .data(dataset)
-            .enter()
-            .append("text")
-            .attr('class', 'sport-info')
-            .attr("x", function(d, i) {
-                return i * (svgWidth / dataset.length);
-            })
-            .attr('y', function(d) {
-               return svgHeight - (d.value) - 20
-            })
-            .attr('text-anchor', 'right')
-            .style("fill",  (g) => (g.color))
-            .text((g) => (g.sport));
 
-
+        gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:3});
         bars.transition()
             .duration(1000)
-            .delay(100)
+            .delay(3000)
             .attr("y", function(d) {
                 return svgHeight - (d.value);  //Height minus data value
             })
@@ -149,10 +80,39 @@ class athleteNumber {
             });
 
 
+        // conversation
+
+        let tl = gsap.timeline();
+        tl.set('.bar-chart',{opacity:0});
+        tl.set('.msg-send-2',{opacity:0});
+        tl.set('.user-send',{opacity:0});
+        tl.set('.msg-received',{opacity:0});
+        tl.fromTo('.msg-send-1', {opacity: 0, y: 200},
+            {opacity: 1, duration: 1, y: 100});
+        tl.fromTo('.msg-send-2', {opacity: 0, y: 50},
+            {opacity: 1, duration: 1, y: 0, delay:0.5});
+        tl.to('.msg-send-1', { duration: 1, y: 0}, 1.3);
+
+
+        /// end conversation
+
+        gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
+        gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
+
 
         let transformation = document.querySelector('.btn-transform');
 
         transformation.addEventListener('click', ()=>{
+
+
+            gsap.to('.user-send', { duration: 1, opacity:1, y: 0,delay:1});
+            gsap.fromTo('.msg-received', {opacity: 0, y: 10},
+                {opacity: 1, duration: 1, y: 0, delay:1.5});
+
+
+            gsap.to('.chart-number',{opacity:0, duration:0.5});
+            gsap.to('.chart-sport',{opacity:0, duration:0.5});
+
             bars.transition()
                 .duration(1000)
                 .delay(100)
@@ -162,6 +122,21 @@ class athleteNumber {
                 .attr("height", function(d) {
                     return d.ratioValue ;
                 });
+
+            gsap.to('.number-1',{opacity:1,y: 50,delay:1, duration:1});
+            gsap.to('.sport-1',{opacity:1,y: 50,delay:1, duration:1});
+
+            setTimeout(function () {
+                document.querySelector('.number-1').innerHTML = '2925';
+                document.querySelector('.number-2').innerHTML = '570';
+            }, 500);
+
+
+            gsap.to('.number-2',{opacity:1,y: -100,delay:1, duration:1});
+            gsap.to('.sport-2',{opacity:1,y: -100,delay:1, duration:1});
+
+
+
         });
 
 
