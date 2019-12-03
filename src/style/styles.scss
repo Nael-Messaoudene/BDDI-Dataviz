@@ -2,9 +2,11 @@
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/mixins';
+@import 'base/global';
 
 @import 'components/hello';
 @import 'components/loading-screen';
+@import 'components/hearings';
 
 body {
   background-color: $gray;

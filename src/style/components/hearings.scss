@@ -1,0 +1,62 @@
+.hearings {
+  background-color: white;
+
+  .wrap {
+    padding: 224px 0;
+  }
+
+  &__title {
+    font-family: Calistoga;
+    font-size: 60px;
+  }
+
+  &-content {
+    margin-top: 66px;
+    display: flex;
+  }
+
+  &-graph {
+    background-color: white;
+    margin-right: 40px;
+
+    &-legend {
+      font-family: "Montserrat Bold";
+      display: flex;
+      margin-bottom: 44px;
+      font-size: 20px;
+
+      > * {
+        padding: 19px;
+        border-radius: 8px;
+      }
+
+      &__olympic {
+        margin-right: 29px;
+        background-color: rgba(100,223,199,0.1);
+        color: $green;
+      }
+
+      &__paralympic {
+        background-color: rgba(255,69,94,0.1);
+        color: $red;
+      }
+    }
+  }
+
+  &-description {
+    padding: 52px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 22px 0 rgba(82, 82, 82, 0.08);
+    margin-top: 58px;
+
+    p {
+      font-family: 'Montserrat Bold';
+      font-size: 31px;
+      color: black;
+      line-height: 42px;
+    }
+  }
+
+
+}
