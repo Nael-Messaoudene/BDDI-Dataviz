@@ -186,10 +186,14 @@ const Hearings = {
         /* Add Axis into SVG */
         var xAxis = d3.axisBottom(xScale)
             .ticks(5)
-            .tickSize(0);
+            .tickSize(0)
+
         var yAxis = d3.axisLeft(yScale)
-            .ticks(5)
+            .ticks(6)
             .tickSize(-width);
+
+
+
 
         svg.append("g")
             .attr("class", "x axis hearings-graph-axisTest grid")
