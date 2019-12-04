@@ -22,6 +22,14 @@
   &-graph {
     margin-right: 40px;
 
+    .axis {
+      .tick {
+        stroke: #bfbfbf;
+        stroke-dasharray: 4;
+        stroke-opacity: .5;
+      }
+    }
+
     &-hoverCircle {
       background-color: red;
       font-size: 16px;

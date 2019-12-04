@@ -184,13 +184,16 @@ const Hearings = {
             });
 
         /* Add Axis into SVG */
-        var xAxis = d3.axisBottom(xScale).ticks(5);
+        var xAxis = d3.axisBottom(xScale)
+            .ticks(5)
+            .tickSize(0);
         var yAxis = d3.axisLeft(yScale)
             .ticks(5)
+            .tickSize(-width);
 
         svg.append("g")
             .attr("class", "x axis hearings-graph-axisTest grid")
-            .attr("stroke-width", "0")
+            .attr("stroke-width", "1")
             .attr("transform", `translate(0, ${height-margin})`)
             .call(xAxis)
 
@@ -199,7 +202,7 @@ const Hearings = {
         svg.append("g")
             .attr("class", "y axis hearings-graph-axisTest")
             .attr("fill", "white")
-            .attr("stroke-width", "0")
+            .attr("stroke-width", "1")
             .call(yAxis)
             .append('text')
             .attr("y", 15)
