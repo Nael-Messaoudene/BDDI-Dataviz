@@ -115,6 +115,10 @@
         color: #8338ec;
         display: none;
       }
+
+      &__birthdate, &__handicap, &__sport, &__history {
+        display: none;
+      }
     }
 
   }
