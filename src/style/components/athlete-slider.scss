@@ -1,6 +1,9 @@
 .athlete-slider {
-  padding: 50px 0;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .flickity-enabled:focus, .flickity-viewport:focus {
     outline: none;
