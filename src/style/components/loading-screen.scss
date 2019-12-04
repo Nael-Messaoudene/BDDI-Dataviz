@@ -7,7 +7,7 @@
   transform-origin: top;
 
   .red {
-    fill: $red;
+    fill: $purple;
   }
 
   svg {
@@ -28,7 +28,7 @@
   }
 
   &_view2 {
-    background-color: $red;
+    background-color: $purple;
     transform: scaleX(0);
     top: 0;
     left: 0;

@@ -42,7 +42,7 @@ const LoadingScreen = {
         gsap.to('.bad',{display: 'none', delay: animationDuration*reduceToSecond, duration: 0.2});
         gsap.to('.cls-1',{fill: "#64DFC7", delay: animationDuration*reduceToSecond, duration: 0.2});
         gsap.to('.cheatfight', {display: 'block',opacity: 1,delay: animationDuration*reduceToSecond, duration: 0.2});
-        gsap.to('.cls-1',{fill: "#FF455E", delay: animationDuration*reduceToSecond+.9, duration: 0.2});
+        gsap.to('.cls-1',{fill: "#8338ec", delay: animationDuration*reduceToSecond+.9, duration: 0.2});
     }
 };
 
