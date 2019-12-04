@@ -130,7 +130,6 @@ const AthleteSlider = {
             .then(() => {
                 var flkty = new Flickity( this.el, {
                     // options
-                    prevNextButtons: false,
                     pageDots: false,
                     wrapAround: true,
                     draggable: false,

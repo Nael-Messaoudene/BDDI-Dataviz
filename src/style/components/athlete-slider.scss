@@ -9,16 +9,58 @@
     outline: none;
   }
 
+  .previous, .next {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    svg {
+      width: 20px;
+      height: auto;
+
+      path{
+        fill: $purple;
+      }
+    }
+  }
+
+  .previous {
+    left: 0px;
+  }
+
+  .next {
+    right: 0px;
+  }
+
+
   &-title {
     @include title();
     font-size: 60px;
     color: white;
-    margin-bottom: 115px;
+    margin-bottom: 25px;
+  }
+
+  &-subtitle {
+    @include content();
+    color: white;
+    margin-bottom: 100px;
   }
 
   &-slides {
 
     text-align: center;
+    position: relative;
 
     .is-selected {
 
@@ -26,7 +68,8 @@
       .athlete-slider-slides-item__image {
 
         img {
-          width: 50%;
+          width: 70%;
+          height: auto;
         }
 
         &:before {
@@ -49,7 +92,10 @@
 
     &-item {
 
-      width: 200px;
+      &:hover {
+        cursor: pointer;
+      }
+
       &[data-color="yellow"] {
         .athlete-slider-slides-item__image {
           background-color: rgba(255, 208, 88, 0.1);
@@ -91,14 +137,15 @@
           color: rgba(131, 56, 236, 1);
         }
       }
-      margin: 0 25px;
+      margin: 0 30px;
       text-align: center;
       &__image {
         background-color: red;
         position: relative;
-        width: 191px;
-        height: 191px;
+        width: 230px;
+        height: 230px;
         margin: 0 auto 30px auto;
+        transition: all 0.2s ease;
 
         img {
           position: absolute;
@@ -114,7 +161,7 @@
 
       &__name {
         @include primarySubtitle();
-        font-size: 20px;
+        font-size: 23px;
         color: #8338ec;
         display: none;
       }
