@@ -2,10 +2,11 @@ import Flickity from 'flickity';
 
 const AthleteSlider = {
     el: document.querySelector('.athlete-slider-slides'),
+    athleteItem: document.querySelector('.athlete-item'),
+    athleteItemClose: document.querySelector('.athlete-item-close'),
     athleteDatas: "./datas/athletes.json",
     athletes: '',
     request: '',
-    athleteItem: '',
 
     getAthletesDatas() {
         this.request = obj => {
@@ -41,9 +42,16 @@ const AthleteSlider = {
                         '            </div>');
                 });
 
-                this.athleteItem = document.querySelector('.athlete-slider-slides-item');
-                this.athleteItem.addEventListener("click", () => {
-                    console.log("coucou moi c'est putaaa")
+                const athletesList = document.querySelectorAll(".athlete-slider-slides-item");
+
+                athletesList.forEach(athleteItem => {
+                    athleteItem.addEventListener("click", () => {
+                        this.athleteItem.classList.add('athlete-item-visible');
+                    });
+                });
+
+                this.athleteItemClose.addEventListener("click", () => {
+                    this.athleteItem.classList.remove('athlete-item-visible');
                 });
 
 

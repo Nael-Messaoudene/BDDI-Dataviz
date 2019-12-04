@@ -9,7 +9,12 @@
   align-items: center;
   justify-content: center;
   color: white;
-  transform: translateX(-100%);
+  transform: translateY(100%);
+  transition: all 1s ease;
+
+  &-visible {
+    transform: translateY(0%);
+  }
 
   &-backgroundname {
     @include title();
