@@ -11,32 +11,34 @@
   .q5-7{fill: $purple-40;border: 1px solid $purple-40;}
   .q6-7{fill: $purple-50;border: 1px solid $purple-50;}
   .q7-7{fill: $purple-60;border: 1px solid $purple-60;}
+
   svg {
-    overflow: initial;
+      overflow: initial;
   }
   path {
-    transform-origin: center;
-    transition: .3s fill ease-in-out;
-    stroke: black;
-    stroke-width: .125px;
-    &:hover {
-      fill: white;
-    }
+      transform-origin: center;
+      transition: .3s fill ease-in-out;
+      stroke: black;
+      stroke-width: .125px;
+      &:hover {
+          fill: white;
+      }
   }
   #dFR {
-    &:hover {
-      cursor: pointer;
-    }
+      &:hover {
+          cursor: pointer;
+      }
   }
   #legendaxis {
-    path, line {
-      display: none;
-    }
-    text {
-      color: $white;
-    }
+      path, line {
+          display: none;
+      }
+      text {
+          color: $white;
+      }
   }
   .tooltip {
+      opacity: 0;
       position: absolute;
       text-align: center;
       color: $white;
@@ -47,20 +49,24 @@
       pointer-events: none;
 
       h3 {
-        font-family: 'Calistoga', sans-serif;
-        font-size: 22px;
+          font-family: 'Calistoga', sans-serif;
+          font-size: 22px;
       }
       p {
-        font-family: "Montserrat", sans-serif;
-        font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          font-size: 18px;
+      }
+
+      &-wrapper {
+
       }
 
       &-pin {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: 1px solid red;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          border: 1px solid red;
       }
   }
 }
