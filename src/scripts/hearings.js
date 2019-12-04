@@ -30,8 +30,20 @@ const Hearings = {
             },
         ];
 
-        const width = 800;
-        const height = 340;
+
+        let width = 800;
+        let height = 340;
+        console.log(window.innerWidth)
+
+        if (window.innerWidth < 1280) {
+            width = 500;
+            height = 250;
+        }
+
+        if (window.innerWidth < 600) {
+            width = 350;
+        }
+
         const margin = 50;
         const duration = 250;
 
