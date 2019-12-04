@@ -45,7 +45,9 @@ const AthleteSlider = {
                         '                </div>' +
                         '                <div class="athlete-slider-slides-item__history">' + athlete.history +
                         '                </div>' +
-                        '                <div class="athlete-slider-slides-item__id">' + athlete.id +
+                        '                <div class="athlete-slider-slides-item__id">'+ athlete.id +'</div>'+
+                        '                <div class="athlete-slider-slides-item__colorrgba">'+ athlete.color_rgba +'</div>'+
+                        '                <div class="athlete-slider-slides-item__colorcode">' + athlete.color_code +
                         '</div>' +
                         '       </div>');
                 });
@@ -61,6 +63,8 @@ const AthleteSlider = {
                         athleteHandicap: athleteItem.querySelector(".athlete-slider-slides-item__handicap").innerText,
                         athleteHistory: athleteItem.querySelector(".athlete-slider-slides-item__history").innerText,
                         athleteId: athleteItem.querySelector(".athlete-slider-slides-item__id").innerText,
+                        athleteColorCode: athleteItem.querySelector(".athlete-slider-slides-item__colorcode").innerText,
+                        athleteColorRgba: athleteItem.querySelector(".athlete-slider-slides-item__colorrgba").innerText,
                         athleteIcon: athleteItem.querySelector(".athlete-slider-slides-item__imagesrc").src,
                     };
 
@@ -69,17 +73,19 @@ const AthleteSlider = {
 
                     athleteItem.addEventListener("click", () => {
                         this.athleteItem.classList.add('athlete-item-visible');
-                        this.athleteItem.insertAdjacentHTML('beforeend', '        <span class="athlete-item-close"></span>\n' +
+                        this.athleteItem.insertAdjacentHTML('beforeend', ' <span style="background-color: '+ athleteInfos.athleteColorCode+'" class="athlete-item-close"></span>\n' +
                             '        <span class="athlete-item-backgroundname">\n' +
                                          athleteInfos.athleteName +
                             '        </span>\n' +
                             '        <div class="athlete-item-profile" style="background-image: url(\'/'+athleteInfos.athleteId+'.jpg\')">\n' +
-                            '            <div class="athlete-item-profile__icon">\n' +
+                            '            <span style="border-color: '+ athleteInfos.athleteColorCode+'" class="athlete-item-profile__border">\n' +
+                            '            </span>\n' +
+                            '            <div class="athlete-item-profile__icon" style="background-color: '+ athleteInfos.athleteColorRgba+'">\n' +
                             '                <img src="'+athleteInfos.athleteIcon+'">\n' +
                             '            </div>\n' +
                             '        </div>\n' +
                             '        <div class="athlete-item-description">\n' +
-                            '            <div class="athlete-item-description-sport">\n' +
+                            '            <div class="athlete-item-description-sport" style="color: '+ athleteInfos.athleteColorCode+'">\n' +
                                         athleteInfos.athleteSport +
                             '            </div>\n' +
                             '            <div class="athlete-item-description-name">\n' +
