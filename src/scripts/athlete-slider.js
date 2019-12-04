@@ -47,7 +47,8 @@ const AthleteSlider = {
                         '                </div>' +
                         '                <div class="athlete-slider-slides-item__id">'+ athlete.id +'</div>'+
                         '                <div class="athlete-slider-slides-item__colorrgba">'+ athlete.color_rgba +'</div>'+
-                        '                <div class="athlete-slider-slides-item__colorcode">' + athlete.color_code +
+                        '                <div class="athlete-slider-slides-item__colorcode">' + athlete.color_code +'</div>'+
+                        '                <div class="athlete-slider-slides-item__town">' + athlete.town +
                         '</div>' +
                         '       </div>');
                 });
@@ -65,6 +66,7 @@ const AthleteSlider = {
                         athleteId: athleteItem.querySelector(".athlete-slider-slides-item__id").innerText,
                         athleteColorCode: athleteItem.querySelector(".athlete-slider-slides-item__colorcode").innerText,
                         athleteColorRgba: athleteItem.querySelector(".athlete-slider-slides-item__colorrgba").innerText,
+                        athleteTown: athleteItem.querySelector(".athlete-slider-slides-item__town").innerText,
                         athleteIcon: athleteItem.querySelector(".athlete-slider-slides-item__imagesrc").src,
                     };
 
@@ -97,6 +99,7 @@ const AthleteSlider = {
                             '                </div>\n' +
                             '                <div class="athlete-item-description-origin">\n' +
                             '                    <p class="athlete-item-description-title">ORIGINAIRE DE</p>\n' +
+                            '                <img src="' +athleteInfos.athleteTown+ '.svg' +'">' +
                             '                </div>\n' +
                             '            </div>\n' +
                             '            <div class="athlete-item-description-period">\n' +
