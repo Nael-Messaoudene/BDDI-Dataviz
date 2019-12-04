@@ -5,6 +5,7 @@ const AthleteSlider = {
     athleteDatas: "./datas/athletes.json",
     athletes: '',
     request: '',
+    athleteItem: '',
 
     getAthletesDatas() {
         this.request = obj => {
@@ -39,6 +40,13 @@ const AthleteSlider = {
                         '                </div>' +
                         '            </div>');
                 });
+
+                this.athleteItem = document.querySelector('.athlete-slider-slides-item');
+                this.athleteItem.addEventListener("click", () => {
+                    console.log("coucou moi c'est putaaa")
+                });
+
+
             })
             .catch(error => {
                 console.log(error);
@@ -46,7 +54,6 @@ const AthleteSlider = {
     },
 
     slideAthletes()  {
-
         this.request({url: this.athleteDatas})
             .then(() => {
                 var flkty = new Flickity( this.el, {
