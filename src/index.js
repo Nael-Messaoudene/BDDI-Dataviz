@@ -1,6 +1,6 @@
 import "./style/styles.scss";
 import LoadingScreen from "./scripts/loading-screen";
-
+import AthleteSlider from "./scripts/athlete-slider";
 import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
@@ -26,7 +26,13 @@ const App = {
 };
 App.init();
 
-//Component Hearings
+//Component AthleteSlider
+const athleteslider = ((athleteslider) => {
+    athleteslider.getAthletesDatas();
+    athleteslider.displayAthletes();
+    athleteslider.slideAthletes();
+})(AthleteSlider);
+
 const hearings = ((hearings) => {
     hearings.drawGraph();
 })(Hearings);
