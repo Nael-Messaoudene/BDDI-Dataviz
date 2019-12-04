@@ -1,5 +1,6 @@
 import "./style/styles.scss";
 import LoadingScreen from "./scripts/loading-screen";
+
 import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
