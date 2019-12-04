@@ -21,11 +21,6 @@
       stroke: black;
       stroke-width: .125px;
       &:hover {
-          fill: white;
-      }
-  }
-  #dFR {
-      &:hover {
           cursor: pointer;
       }
   }
@@ -40,33 +35,68 @@
   .tooltip {
       opacity: 0;
       position: absolute;
-      text-align: center;
-      color: $white;
-      padding: 20px 30px 10px 30px;
-      width: 275px;
-      background-color: $gray;
-      border-radius: 20px;
       pointer-events: none;
-
-      h3 {
-          font-family: 'Calistoga', sans-serif;
-          font-size: 22px;
-      }
-      p {
-          font-family: "Montserrat", sans-serif;
-          font-size: 18px;
-      }
+      border: 1px solid red;
 
       &-wrapper {
-
       }
 
-      &-pin {
+      &-content {
+          text-align: center;
+          color: $white;
+          padding: 20px 30px 10px 30px;
+          width: fit-content;
+          background-color: $gray;
+          border-radius: 20px;
+          h3 {
+            font-family: 'Calistoga', sans-serif;
+            font-size: 22px;
+          }
+          p {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+          }
+      }
+
+      &-indicator {
           position: absolute;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          border: 1px solid red;
+          top: 0;
+          left: 0;
+          border-color: transparent;
+
+          .straight {
+            position: absolute;
+            top: -30px;
+            left: 40px;
+            width: 150px;
+            border-bottom: 1px solid;
+          }
+          .diag {
+              position: absolute;
+              top: -12px;
+              left: -2px;
+              width: 50px;
+              transform: rotate(-45deg);
+              border-bottom: 1px dashed;
+          }
+          .circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid;
+          }
+
+          &-0 {.straight, .diag, .circle{border-color: $purple-60;}}
+          &-1 {.straight, .diag, .circle{border-color: $purple-50;}}
+          &-2 {.straight, .diag, .circle{border-color: $purple-40;}}
+          &-3 {.straight, .diag, .circle{border-color: $purple-30;}}
+          &-4 {.straight, .diag, .circle{border-color: $purple-20;}}
+          &-5 {.straight, .diag, .circle{border-color: $purple-10;}}
+          &-6 {.straight, .diag, .circle{border-color: $purple-0;}}
+          &-7 {.straight, .diag, .circle{border-color: $white;}}
       }
   }
 }

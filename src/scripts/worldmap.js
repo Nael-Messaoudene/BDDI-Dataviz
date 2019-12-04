@@ -3,10 +3,18 @@ import * as d3 from "d3";
 const WorldMap = {
 
     initMap() {
+
+        // --- create tooltip dom
+        const test = document.querySelector(".tooltip");
+        const tooltip = d3.select(".tooltip");
+        const tooltipcontent = d3.select(".tooltip-content");
+        const tooltipindicator = d3.select(".tooltip-indicator");
         // MOUSE
         let mx = 0;
         let my = 0;
-        document.addEventListener("mousemove", function(e){
+        document.addEventListener("mousemove", function(e) {
+            test.style.top = e.pageY + "px";
+            test.style.left = e.pageX + "px";
             mx = e.clientX;
             my = e.clientY;
         });
@@ -31,13 +39,7 @@ const WorldMap = {
         const countries = svg.append("g")
             .attr("class", "container");
 
-        // --- create tooltip dom
-        const tooltip = d3.select(".worldmap").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
 
-        const tooltippin = d3.select(".tooltip").append("span")
-            .attr("class", "tooltip-pin");
 
         // --- init data
         const   proxyUrl    = 'https://cors-anywhere.herokuapp.com/',
@@ -97,26 +99,24 @@ const WorldMap = {
                     .attr("class", function() { return "country q" + quantize(Math.sqrt(+e.athletes)) + "-7"; })
                     // UPDATE TOOLTIP CONTENT AND POSITION GIVEN THE COUNTRY HOVERED
                     .on("mouseover", function() {
-                        tooltip.attr("class", function() { return "tooltip q" + quantize(Math.sqrt(+e.athletes)) + "-7"; })
                         tooltip.transition()
                             .duration(200)
                             .style("opacity", .9);
-                        tooltip
+                        tooltipcontent
                             .html("<h3>" + e.Country + "</h3><br>"
-                            + "<p>" + e.athletes + " athlètes</p><br>")
-                            .style("left", (mx + 25) + "px")
-                            .style("top", (my - 50) + "px");
-                        tooltippin
-                            .style("left", (mx) + "px")
-                            .style("top", (my) + "px");
+                                + "<p>" + e.athletes + " athlètes</p><br>")
+                            .attr("class", function() { return "tooltip-content q" + quantize(Math.sqrt(+e.athletes)) + "-7"; });
+                        tooltipindicator
+                            .attr("class", function() { return "tooltip-indicator tooltip-indicator-" + quantize(Math.sqrt(+e.athletes)); });
                     })
                     .on("mouseout", function() {
-                        tooltip.style("opacity", 0);
                         tooltip
+                            .style("opacity", 0);
+                        tooltipcontent
                             .html("")
-                            .style("left", "0px")
-                            .style("top", "0px");
-                        tooltip.attr("class", "tooltip");
+                            .attr("class", "tooltip-content");
+                        tooltipindicator
+                            .attr("class", "tooltip-indicator");
                     });
             });
         });
