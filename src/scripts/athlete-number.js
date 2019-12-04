@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import {gsap} from "gsap";
+import ScrollReveal from 'scrollreveal';
 
 class athleteNumber {
 
@@ -47,12 +48,12 @@ class athleteNumber {
 
 
 //Create SVG element
-        let svg = d3.select('svg')
+        let svg = d3.select('.chart-container svg')
             .attr("width", svgWidth + 2  * margin)
             .attr("height", svgHeight )
             .attr("class", "bar-chart");
 
-        var bars = svg.selectAll("rect")
+        var bars = svg.selectAll(".bar-chart rect")
             .data(dataset)
             .enter()
             .append("rect")
@@ -69,7 +70,7 @@ class athleteNumber {
 
 
         gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:3});
-        bars.transition()
+       let r = bars.transition()
             .duration(1000)
             .delay(3000)
             .attr("y", function(d) {
@@ -98,6 +99,10 @@ class athleteNumber {
 
         gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
         gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
+        gsap.to('.numtransform', {opacity:0,delay:4.00000001, duration:1});
+
+
+        console.log(document.querySelector('.numbergroup-1').innerHTML);
 
 
         let transformation = document.querySelector('.btn-transform');
@@ -123,18 +128,31 @@ class athleteNumber {
                     return d.ratioValue ;
                 });
 
-            gsap.to('.number-1',{opacity:1,y: 50,delay:1, duration:1});
-            gsap.to('.sport-1',{opacity:1,y: 50,delay:1, duration:1});
+            gsap.to('.number-1',{opacity:1,y: 65,delay:1, duration:1});
+            gsap.to('.sport-1',{opacity:1,y: 25, x:-10,delay:1, duration:1});
 
             setTimeout(function () {
-                document.querySelector('.number-1').innerHTML = '2925';
-                document.querySelector('.number-2').innerHTML = '570';
+                document.querySelector('.numbergroup-1').innerText = '3.69%';
+                document.querySelector('.numbergroup-2').innerHTML = '2.11%';
             }, 500);
 
 
-            gsap.to('.number-2',{opacity:1,y: -100,delay:1, duration:1});
-            gsap.to('.sport-2',{opacity:1,y: -100,delay:1, duration:1});
 
+            gsap.to('.number-2',{opacity:1,y: -80,x:25,delay:1, duration:1});
+            gsap.to('.sport-2',{opacity:1,y: -120, x:-15,delay:1, duration:1});
+
+
+
+            gsap.to('.numbergroup',{opacity:1,delay:1, duration:1});
+            gsap.to('.sportgroup',{opacity:1,delay:1, duration:1});
+
+            // set new numbers
+            gsap.set('.numbergroup-1', {y: 30, delay:1, x: 20});
+            gsap.set('.numbergroup-2', {y: -50, delay:1, x: 20});
+
+            // set new text
+            gsap.set('.sportgroup-1', {y: 65, delay:1, x: -55});
+            gsap.set('.sportgroup-2', {y: -15, delay:1, x: -30});
 
 
         });
