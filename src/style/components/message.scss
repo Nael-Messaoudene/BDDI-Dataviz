@@ -1,0 +1,89 @@
+.message{
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  width: 750px;
+  padding: 100px 60px;
+  @media (max-width: 1080px) {
+    width: 100%;
+    max-width: unset;
+  }
+  &--box{
+    padding: 20px 30px;
+    border-radius: 20px;
+    width: fit-content;
+    max-width: 470px ;
+    margin-bottom: 40px;
+    display: flex;
+    //opacity: 0;
+    &__text{
+      @include content();
+      color: $white;
+      font-size: 20px;
+    }
+  }
+}
+.leftAlign{
+  align-self: flex-start;
+}
+.rightAlign{
+  align-self: flex-end;
+}
+.send{
+  background: $purple;
+  &--text{
+    color: $white;
+  }
+}
+.received{
+  background: $gray-dark;
+  &--text{
+    color: $white;
+  }
+}
+.desktop-msg{
+  overflow-y: scroll;
+  @media( max-width: 1080px){
+    display: none;
+  }
+}
+.mobile-msg{
+  display: flex;
+  @media (min-width: 1081px) {
+    display: none;
+  }
+}
+
+.visible{
+  opacity: 1;
+}
+.bold{
+  font-weight: 700;
+}
+.msg-information{
+  flex-direction: column;
+  background-color: rgba(255, 208, 88, 0.1);
+  width: 90%;
+  max-width: unset;
+  border: 2px solid;
+  border-color: $yellow;
+  border-radius: 8px;
+}
+
+.msg-chart{
+  width: 100%;
+}
+.infotext{
+  display: flex;
+  color: $yellow;
+}
+.infobulle{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+//responsive block w/
+.wrap-message{
+  overflow-y: scroll;
+}
