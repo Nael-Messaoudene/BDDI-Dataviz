@@ -34,7 +34,7 @@ const AthleteSlider = {
                     this.el.insertAdjacentHTML('beforeend',
                         '<div class="athlete-slider-slides-item" data-color="'+athlete.color+'">' +
                         '                <div class="athlete-slider-slides-item__image">' +
-                        '                    <img src="'+'.jpg'+'"></div>' +
+                        '                    <img class="athlete-slider-slides-item__imagesrc" src="'+athlete.icon+'.svg'+'"></div>' +
                         '                <div class="athlete-slider-slides-item__name">' + athlete.name +
                         '                </div>' +
                         '                <div class="athlete-slider-slides-item__sport">' + athlete.sport +
@@ -61,9 +61,11 @@ const AthleteSlider = {
                         athleteHandicap: athleteItem.querySelector(".athlete-slider-slides-item__handicap").innerText,
                         athleteHistory: athleteItem.querySelector(".athlete-slider-slides-item__history").innerText,
                         athleteId: athleteItem.querySelector(".athlete-slider-slides-item__id").innerText,
+                        athleteIcon: athleteItem.querySelector(".athlete-slider-slides-item__imagesrc").src,
                     };
 
                     //console.log(document.querySelector(".athlete-slider-slides-item").innerHTML);
+                    console.log(athleteInfos.athleteIcon);
 
                     athleteItem.addEventListener("click", () => {
                         this.athleteItem.classList.add('athlete-item-visible');
@@ -73,7 +75,7 @@ const AthleteSlider = {
                             '        </span>\n' +
                             '        <div class="athlete-item-profile" style="background-image: url(\'/'+athleteInfos.athleteId+'.jpg\')">\n' +
                             '            <div class="athlete-item-profile__icon">\n' +
-                            '                <img src="/assets/images/skiing.svg">\n' +
+                            '                <img src="'+athleteInfos.athleteIcon+'">\n' +
                             '            </div>\n' +
                             '        </div>\n' +
                             '        <div class="athlete-item-description">\n' +

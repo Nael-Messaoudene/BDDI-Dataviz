@@ -2,6 +2,7 @@
   {
     "id": "1",
     "name": "Benjamin DAVIET",
+    "icon": "skiing",
     "color": "green",
     "sport": "Biathlon",
     "or_medals": "3",
@@ -16,6 +17,7 @@
   {
     "id": "2",
     "name": "Marie BOCHET",
+    "icon": "skiing",
     "color": "yellow",
     "sport": "Para ski alpin",
     "or_medals": "8",
@@ -30,6 +32,7 @@
   {
     "id": "3",
     "name": "Cécile HERNANDEZ",
+    "icon": "skiing",
     "color": "purple",
     "sport": "para snowboard",
     "or_medals": "0",
@@ -44,6 +47,7 @@
   {
     "id": "4",
     "name": "Arthur BEAUCHET",
+    "icon": "skiing",
     "color": "green",
     "sport": "Para ski alpin",
     "or_medals": "0",
@@ -58,6 +62,7 @@
   {
     "id": "5",
     "name": "Jordan BROISIN",
+    "icon": "skiing",
     "color": "yellow",
     "sport": "Para ski alpin",
     "or_medals": "0",
@@ -72,6 +77,7 @@
   {
     "id": "6",
     "name": "Anthony CHALENÇON",
+    "icon": "skiing",
     "color": "purple",
     "sport": "Biathlon",
     "or_medals": "1",
@@ -86,6 +92,7 @@
   {
     "id": "7",
     "name": "Thomas CLARION",
+    "icon": "skiing",
     "color": "green",
     "sport": "Biathlon",
     "or_medals": "1",
@@ -100,6 +107,7 @@
   {
     "id": "8",
     "name": "Thomas DUBOIS",
+    "icon": "skiing",
     "color": "yellow",
     "sport": "Biathlon",
     "or_medals": "0",
@@ -114,6 +122,7 @@
   {
     "id": "9",
     "name": "Frédéric FRANÇOIS",
+    "icon": "skiing",
     "color": "purple",
     "sport": "Para ski alpin",
     "or_medals": "0",
@@ -128,6 +137,7 @@
   {
     "id": "10",
     "name": "Maxime MONTAGGIAONI",
+    "icon": "skiing",
     "color": "green",
     "sport": "para snowboard",
     "or_medals": "0",
@@ -142,6 +152,7 @@
   {
     "id": "11",
     "name": "Julien ROULET",
+    "icon": "skiing",
     "color": "yellow",
     "sport": "para snowboard",
     "or_medals": "0",
@@ -156,6 +167,7 @@
   {
     "id": "12",
     "name": "Yohann TABERLET",
+    "icon": "skiing",
     "color": "purple",
     "sport": "para ski alpin",
     "or_medals": "0",
