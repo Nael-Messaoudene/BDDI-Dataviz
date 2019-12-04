@@ -1,5 +1,5 @@
 .athlete-item {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color:$gray;
@@ -9,11 +9,11 @@
   align-items: center;
   justify-content: center;
   color: white;
-  transform: translateY(100%);
+  transform: translateX(-100%);
   transition: all 1s ease;
 
   &-visible {
-    transform: translateY(0%);
+    transform: translateX(0%);
   }
 
   &-backgroundname {

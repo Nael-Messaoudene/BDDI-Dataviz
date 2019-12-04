@@ -11,13 +11,6 @@ const loadingscreen = ((loadingscreen) => {
     loadingscreen.animateScreens();
 })(LoadingScreen);
 
-//Component AthleteSlider
-const athleteslider = ((athleteslider) => {
-    athleteslider.getAthletesDatas();
-    athleteslider.displayAthletes();
-    athleteslider.slideAthletes();
-})(AthleteSlider);
-
 //Component LoadingScreen
 const worldmap = ((worldmap) => {
     worldmap.initMap();
@@ -32,6 +25,13 @@ const App = {
     }
 };
 App.init();
+
+//Component AthleteSlider
+const athleteslider = ((athleteslider) => {
+    athleteslider.getAthletesDatas();
+    athleteslider.displayAthletes();
+    athleteslider.slideAthletes();
+})(AthleteSlider);
 
 const hearings = ((hearings) => {
     hearings.drawGraph();
