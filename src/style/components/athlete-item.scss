@@ -8,10 +8,101 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  transform: translateX(-100%);
+
+  &-backgroundname {
+    @include title();
+    font-size: 160px;
+    color: white;
+    opacity: 0.03;
+    position: absolute;
+    left: 68%;
+    line-height: 208px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+  }
+
+  &-close {
+    width: 92px;
+    height: 92px;
+    opacity: 0.1;
+    background-color: #64dfc7;
+    border-radius: 50%;
+    position: absolute;
+    right: 80px;
+    top: 60px;
+  }
 
   &-profile {
     width: 592px;
     height: 592px;
     background-color: $green;
+    position: relative;
+    background-position: center;
+
+    &__icon {
+      width: 186px;
+      height: 186px;
+      background-color: #384542;
+      position: absolute;
+      right: -50px;
+      bottom: -50px;
+      border-radius: 5px;
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 70%;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      content:'';
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      border: 2px solid $green;
+      left: -52px;
+      top: -52px;
+    }
+  }
+
+  &-description {
+    width: 40%;
+    margin-left: 8%;
+    text-align: left;
+
+    &-sport {
+      color: $green;
+      font-family: 'Montserrat';
+      font-size: 25px;
+      margin-bottom: 8px;
+
+    }
+
+    &-name {
+      @include primarySubtitle();
+    }
+
+    &-datas {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-title {
+      @include primarySubtitle();
+      font-size: 25px;
+      margin: 35px 0 6px 0;
+    }
+
+    &-text {
+      @include content();
+      line-height: 28px;
+    }
   }
 }
