@@ -1,10 +1,24 @@
 // -------------- COLORS
-$gray   : #333333;
-$white  : #FFFFFF;
+$gray        : #333333;
+$white       : #FFFFFF;
 
-$red    : #FF455E;
-$green  : #64DFC7;
-$yellow : #FFD058;
+$purple      : #8338EC;
+$green       : #64DFC7;
+$yellow      : #FFD058;
+
+$purple-0    : #E8DAFB;
+$purple-10   : #D1B6F8;
+$purple-20   : #BB92F4;
+$purple-30   : #A46EF1;
+$purple-40   : #8E4AED;
+$purple-50   : #7833D7;
+$purple-60   : #6029AC;
+
+$gray-medium : #989898;
+$gray-dark   : #404040;
+
+// -------------- LAYOUT
+$gutter-l   : 80px;
 
 //responsive variables
 $screen1920: 1920px;
@@ -17,3 +31,4 @@ $screen700: 768px;
 $screen576: 576px;
 $screen480: 480px;
 $screen320: 320px;
+
