@@ -5,6 +5,7 @@
 @import 'base/mixins';
 @import 'base/global';
 
+@import 'components/homescreen';
 @import 'components/characters';
 @import 'components/message';
 @import 'components/loading-screen';
@@ -12,7 +13,6 @@
 @import 'components/hearings';
 @import 'components/athlete-slider';
 @import 'components/athlete-item';
-
 
 // Layouts
 @import 'layouts/conversation';
@@ -37,4 +37,8 @@ body {
 
 h1, h2, h3 {
   margin: 0;
+}
+.test-scroll{
+  height: 100vh;
+  width: 100%;
 }
