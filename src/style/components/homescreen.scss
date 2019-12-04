@@ -70,8 +70,8 @@
         background-color: $green;
         transition: all 0.2s ease;
         position: relative;
-        overflow-x: hidden;
         z-index: 1;
+        overflow: hidden;
 
         &:after {
             content: '';
@@ -82,6 +82,7 @@
             height: 100%;
             background-color: $green;
             z-index: -2;
+            border-radius: 20px;
         }
         &:before {
             content: '';
@@ -93,6 +94,7 @@
             background-color: darken($green, 15%);
             transition: all .3s;
             z-index: -1;
+            border-radius: 20px
         }
 
         &:hover {
