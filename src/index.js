@@ -1,6 +1,6 @@
 import "./style/styles.scss";
 import LoadingScreen from "./scripts/loading-screen";
-
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 import conversation from './scripts/conversation'
 
 
