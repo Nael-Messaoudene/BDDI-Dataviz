@@ -30,6 +30,21 @@ class conversation{
             viewFactor: 1.0
         });
 
+        window.addEventListener('resize', function () {
+
+        });
+        ScrollReveal().reveal('.message--box', {
+            container: '.wrap-message',
+            delay: 375,
+            duration: 500,
+            reset: true,
+            distance: '50px',
+            viewOffset: {
+                top: 0,
+            },
+            viewFactor: 1.0
+        });
+
 
     }
 
