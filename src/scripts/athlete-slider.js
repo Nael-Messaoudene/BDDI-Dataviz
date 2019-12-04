@@ -3,7 +3,6 @@ import Flickity from 'flickity';
 const AthleteSlider = {
     el: document.querySelector('.athlete-slider-slides'),
     athleteItem: document.querySelector('.athlete-item'),
-    athleteItemClose: document.querySelector('.athlete-item-close'),
     athleteDatas: "./datas/athletes.json",
     athletes: '',
     request: '',
@@ -30,13 +29,12 @@ const AthleteSlider = {
         this.request({url: this.athleteDatas})
             .then(data => {
                 this.athletes = JSON.parse(data);
-                console.log(this.athletes);
 
                 this.athletes.forEach(athlete => {
                     this.el.insertAdjacentHTML('beforeend',
                         '<div class="athlete-slider-slides-item" data-color="'+athlete.color+'">' +
                         '                <div class="athlete-slider-slides-item__image">' +
-                        '                    <img src="'+'daviet.jpg'+'"></div>' +
+                        '                    <img src="'+'.jpg'+'"></div>' +
                         '                <div class="athlete-slider-slides-item__name">' + athlete.name +
                         '                </div>' +
                         '                <div class="athlete-slider-slides-item__sport">' + athlete.sport +
@@ -47,6 +45,8 @@ const AthleteSlider = {
                         '                </div>' +
                         '                <div class="athlete-slider-slides-item__history">' + athlete.history +
                         '                </div>' +
+                        '                <div class="athlete-slider-slides-item__id">' + athlete.id +
+                        '</div>' +
                         '       </div>');
                 });
 
@@ -60,6 +60,7 @@ const AthleteSlider = {
                         athleteBirthdate: athleteItem.querySelector(".athlete-slider-slides-item__birthdate").innerText,
                         athleteHandicap: athleteItem.querySelector(".athlete-slider-slides-item__handicap").innerText,
                         athleteHistory: athleteItem.querySelector(".athlete-slider-slides-item__history").innerText,
+                        athleteId: athleteItem.querySelector(".athlete-slider-slides-item__id").innerText,
                     };
 
                     //console.log(document.querySelector(".athlete-slider-slides-item").innerHTML);
@@ -70,7 +71,7 @@ const AthleteSlider = {
                             '        <span class="athlete-item-backgroundname">\n' +
                                          athleteInfos.athleteName +
                             '        </span>\n' +
-                            '        <div class="athlete-item-profile" style="background-image: url(\'/assets/images/daviet.jpg\')">\n' +
+                            '        <div class="athlete-item-profile" style="background-image: url(\'/'+athleteInfos.athleteId+'.jpg\')">\n' +
                             '            <div class="athlete-item-profile__icon">\n' +
                             '                <img src="/assets/images/skiing.svg">\n' +
                             '            </div>\n' +
@@ -106,12 +107,15 @@ const AthleteSlider = {
                             '                <p class="athlete-item-description-text">'+ athleteInfos.athleteHistory +'</p>\n' +
                             '            </div>\n' +
                             '        </div>');
+
+                        document.querySelector('.athlete-item-close').addEventListener("click", () => {
+                            this.athleteItem.classList.remove('athlete-item-visible');
+
+                            setTimeout(() => { this.athleteItem.innerHTML="" }, 300);
+                        });
                     });
                 });
 
-                this.athleteItemClose.addEventListener("click", () => {
-                    this.athleteItem.classList.remove('athlete-item-visible');
-                });
 
             })
             .catch(error => {

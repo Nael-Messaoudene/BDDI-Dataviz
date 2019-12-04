@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "name": "Benjamin DAVIET",
     "color": "green",
     "sport": "Biathlon",
@@ -13,6 +14,7 @@
     "history": "Benjamin Daviet participe à deux éditions des Jeux paralympiques, en 2014 à Sotchi où il obtient une médaille de bronze en relais du ski de fond, puis en 2018 à Pyeongchang, il remporte trois médailles en biathlon dont deux titres et une médaille d’argent, et deux en ski de fond, une de bronze et l’or du relais."
   },
   {
+    "id": "2",
     "name": "Marie BOCHET",
     "color": "yellow",
     "sport": "Para ski alpin",
@@ -26,6 +28,7 @@
     "history": "Marie Bochet est quadruple championne paralympique, c'est sa troisième participation ; sacrée 15 fois championne du monde de sa discipline elle a aussi remporté un Globe de cristal."
   },
   {
+    "id": "3",
     "name": "Cécile HERNANDEZ",
     "color": "purple",
     "sport": "para snowboard",
@@ -39,6 +42,7 @@
     "history": "Céline remporte le titre de vice-championne du monde de snowboardcross le 4 février 2017 et double la mise avec une médaille d'argent en banked slalom, aux championnats du monde de snowboard handisport dans la station Big White au Canada. Elle a notamment remporté trois médailles aux Jeux paralympiques, l'argent lors de l' édition 2014 de Sotchi, puis le bronze du snowboardcross et l'argent du banked slalom aux Jeux 2018 de Pyeongchang."
   },
   {
+    "id": "4",
     "name": "Arthur BEAUCHET",
     "color": "green",
     "sport": "Para ski alpin",
@@ -52,6 +56,7 @@
     "history": "C'est sa première participation aux Jeux paralympiques, après de très bon résultats : il s'est offert trois podiums de championnats du monde cette saison."
   },
   {
+    "id": "5",
     "name": "Jordan BROISIN",
     "color": "yellow",
     "sport": "Para ski alpin",
@@ -65,6 +70,7 @@
     "history": "Jordan a été 1er en Slalom, 2e en Géant, 3e en Super G aux Coupes d’Europe de Veysonnaz en janvier 2017. Il arrive à la 8e en Descente et 9e place en Super G aux Coupes du Monde de Jongseon en mars 2017."
   },
   {
+    "id": "6",
     "name": "Anthony CHALENÇON",
     "color": "purple",
     "sport": "Biathlon",
@@ -78,6 +84,7 @@
     "history": "Ancien skieur alpin ayant participé aux Jeux Paralympiques de Vancouver en 2010, c’est sur le circuit international de ski nordique que nous retrouvons Anthony Chalençon. Après seulement deux ans passés dans cette nouvelle discipline, il remporte en 2015, sa première médaille d’Or en relais aux Championnats du Monde à Câble (USA)."
   },
   {
+    "id": "7",
     "name": "Thomas CLARION",
     "color": "green",
     "sport": "Biathlon",
@@ -91,6 +98,7 @@
     "history": "Sur le circuit international depuis 2004, Thomas s’est véritablement révélé en 2008 lorsqu’il a remporté la Coupe du monde de Biathlon. En récoltant les deux premières places lors des épreuves en Suède ainsi que deux podiums aux Pré-paralympiques au Canada, il s’est placé parmi les meilleurs athlètes mondiaux de sa discipline. Iil a terminé 2e du classement général de la Coupe du Monde de biathlon en 2012. Il est aussi plusieurs fois médaillé aux Jeux paralympiques, avec deux médailles de bronze lors de l'édition de 2014 à Sotchi et une d'or, avec le relais, et de bronze en 2018 à Pyeongchang."
   },
   {
+    "id": "8",
     "name": "Thomas DUBOIS",
     "color": "yellow",
     "sport": "Biathlon",
@@ -104,6 +112,7 @@
     "history": "Thomas est arrivé 9e aux Jeux Paralympiques de Peyongchang au biathlon long,10ème au 10 kmM classique, 11ème au biathlon middle et 13ème au biathlon sprint. A la coupe du monde Oberried, il arrive au pied du podium, à la 4e place au biathlon long. "
   },
   {
+    "id": "9",
     "name": "Frédéric FRANÇOIS",
     "color": "purple",
     "sport": "Para ski alpin",
@@ -117,6 +126,7 @@
     "history": "Frédéric François a participé aux championnats du monde de ski alpin de 2011 à 2018. Il remporte au cours de cette période une médaille d'argent et une médaille de bronze. Il participe aussi à la coupe du monde de ski alpin, où il remporte trois médaille d'or, trois d'argent, et quatre de bronze. "
   },
   {
+    "id": "10",
     "name": "Maxime MONTAGGIAONI",
     "color": "green",
     "sport": "para snowboard",
@@ -130,6 +140,7 @@
     "history": "Il remporte son premier titre de vice-champion du monde de snowboard cross3 le 4 février 2017 et il double la mise en remportant cette fois le titre le champion du monde en banked slalom4 le 7 février 2017 aux championnats du monde de snowboard handisport dans la station \"Big White\" au Canada."
   },
   {
+    "id": "11",
     "name": "Julien ROULET",
     "color": "yellow",
     "sport": "para snowboard",
@@ -143,6 +154,7 @@
     "history": "Julien a commencé les compétions en 2017 avec la coupe du Monde La Molina où il arrive à la 4ème place. Au Championnat de France aux Saisies, il arrive en deuxième position au cross snowbard. "
   },
   {
+    "id": "12",
     "name": "Yohann TABERLET",
     "color": "purple",
     "sport": "para ski alpin",
