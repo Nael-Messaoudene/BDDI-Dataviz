@@ -5,12 +5,16 @@
 @import 'base/mixins';
 @import 'base/global';
 
+
+// Components
 @import 'components/homescreen';
 @import 'components/characters';
 @import 'components/message';
 @import 'components/loading-screen';
 @import 'components/worldmap';
 @import 'components/hearings';
+@import 'components/athleteNumber';
+
 @import 'components/athlete-slider';
 @import 'components/athlete-item';
 
@@ -27,7 +31,6 @@ html,body{
 body {
   overflow: hidden;
   background-color: $gray;
-  overflow-x: hidden;
 }
 #app{
   width: 100%;
@@ -37,8 +40,4 @@ body {
 
 h1, h2, h3 {
   margin: 0;
-}
-.test-scroll{
-  height: 100vh;
-  width: 100%;
 }
