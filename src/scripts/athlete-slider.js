@@ -36,7 +36,7 @@ const AthleteSlider = {
                     this.el.insertAdjacentHTML('beforeend',
                         '<div class="athlete-slider-slides-item" data-color="'+athlete.color+'">' +
                         '                <div class="athlete-slider-slides-item__image">' +
-                        '                    <img src="'+'skiing.c962b042'+'.svg'+'"></div>' +
+                        '                    <img src="'+'daviet.jpg'+'"></div>' +
                         '                <div class="athlete-slider-slides-item__name">' + athlete.name +
                         '                </div>' +
                         '                <div class="athlete-slider-slides-item__sport">' + athlete.sport +
@@ -69,7 +69,6 @@ const AthleteSlider = {
                         this.athleteItem.insertAdjacentHTML('beforeend', '        <span class="athlete-item-close"></span>\n' +
                             '        <span class="athlete-item-backgroundname">\n' +
                                          athleteInfos.athleteName +
-                            '            DAVET\n' +
                             '        </span>\n' +
                             '        <div class="athlete-item-profile" style="background-image: url(\'/assets/images/daviet.jpg\')">\n' +
                             '            <div class="athlete-item-profile__icon">\n' +
@@ -114,7 +113,6 @@ const AthleteSlider = {
                     this.athleteItem.classList.remove('athlete-item-visible');
                 });
 
-
             })
             .catch(error => {
                 console.log(error);
@@ -128,7 +126,8 @@ const AthleteSlider = {
                     // options
                     prevNextButtons: false,
                     pageDots: false,
-                    wrapAround: true
+                    wrapAround: true,
+                    draggable: false,
                 });
             })
             .catch(error => {
