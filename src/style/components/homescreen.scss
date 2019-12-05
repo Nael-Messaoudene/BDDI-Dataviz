@@ -70,7 +70,20 @@
         background-color: $green;
         transition: all 0.2s ease;
         position: relative;
-        z-index: 1;
+        z-index: 1000;
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+        }
 
         &:before {
             content: '';
