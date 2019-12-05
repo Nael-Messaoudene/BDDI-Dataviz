@@ -68,11 +68,6 @@ class athleteNumber {
             .attr("width", barWidth - barPadding)
             .attr("height", 1);
 
-
-
-        console.log(document.querySelector('.numbergroup-1').innerHTML);
-
-
         let transformation = document.querySelector('.btn-transform');
 
         transformation.addEventListener('click', ()=>{
