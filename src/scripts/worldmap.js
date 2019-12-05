@@ -96,7 +96,14 @@ const WorldMap = {
             const legendAxis = svg.append("g")
                 .attr('transform', 'translate(-65, 100)')
                 .attr('class', 'legendaxis')
-                .call(d3.axisRight(legendScale).ticks(6));
+                .call(d3.axisRight(legendScale).ticks(8));
+
+            const lasttick = legendAxis.append("text")
+                .attr('class', 'lasttick')
+                .attr('y', '355px')
+                .attr('x', '10px')
+                .html('70');
+
 
             const legendLabel1 = svg.append("text")
                 .attr("class", "legendlabel")
