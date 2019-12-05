@@ -28,8 +28,8 @@ const WorldMap = {
         const tooltipindicator = d3.select(".tooltip-indicator");
         // MOUSE
         document.addEventListener("mousemove", function(e) {
-            tooltipdom.style.top = e.pageY - 5 + "px";
-            tooltipdom.style.left = e.pageX - 5 + "px";
+            tooltipdom.style.top = e.clientY - 5 + "px";
+            tooltipdom.style.left = e.clientX - 5 + "px";
         });
 
         // INIT WORLDMAP DOM
@@ -87,16 +87,16 @@ const WorldMap = {
                 .attr('height', '50px')
                 .attr('width', '50px')
                 .attr('x', '-200px')
-                .attr("class", function(d) { return "q" + d + "-7"; });
+                .attr("class", function(d) { return "l" + d + "-7"; });
 
             const legendScale = d3.scaleLinear()
                 .domain([0, d3.max(csv, function(e) { return +e.athletes; })])
                 .range([0, 7 * 48 ]);
 
             const legendAxis = svg.append("g")
-                .attr('transform', 'translate(-25, 100)')
+                .attr('transform', 'translate(-65, 100)')
                 .attr('class', 'legendaxis')
-                .call(d3.axisRight(legendScale).ticks(4));
+                .call(d3.axisRight(legendScale).ticks(6));
 
             const legendLabel1 = svg.append("text")
                 .attr("class", "legendlabel")
@@ -119,7 +119,7 @@ const WorldMap = {
             csv.forEach(function(e,i) {
                 d3.select("#d" + e.id)
                     // ADD CLASS TO COUNTRY GIVEN THEIR ATHLETES AMOUNT ON A SCALE FROM 0 to 7
-                    .attr("class", function() { return "country q" + quantize(Math.sqrt(+e.athletes)) + "-7"; })
+                    .attr("class", function(d) { return "country q" + quantize(Math.sqrt(+e.athletes)) + "-7"; })
                     // UPDATE TOOLTIP CONTENT AND POSITION GIVEN THE COUNTRY HOVERED
                     .on("mouseover", function() {
                         tooltipAnimationHandler(true);
