@@ -90,6 +90,7 @@
     margin-left: 8%;
     text-align: left;
 
+
     &-sport {
       color: $green;
       font-family: 'Montserrat';
@@ -110,6 +111,10 @@
       @include primarySubtitle();
       font-size: 25px;
       margin: 35px 0 6px 0;
+
+      &-margin {
+        margin-bottom: 15px;
+      }
     }
 
     &-text {

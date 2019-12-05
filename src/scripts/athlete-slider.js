@@ -48,6 +48,7 @@ const AthleteSlider = {
                         '                <div class="athlete-slider-slides-item__id">'+ athlete.id +'</div>'+
                         '                <div class="athlete-slider-slides-item__colorrgba">'+ athlete.color_rgba +'</div>'+
                         '                <div class="athlete-slider-slides-item__colorcode">' + athlete.color_code +'</div>'+
+                        '                <div class="athlete-slider-slides-item__medalicon">' + athlete.medal_icon +'</div>'+
                         '                <div class="athlete-slider-slides-item__town">' + athlete.town +
                         '</div>' +
                         '       </div>');
@@ -68,10 +69,9 @@ const AthleteSlider = {
                         athleteColorRgba: athleteItem.querySelector(".athlete-slider-slides-item__colorrgba").innerText,
                         athleteTown: athleteItem.querySelector(".athlete-slider-slides-item__town").innerText,
                         athleteIcon: athleteItem.querySelector(".athlete-slider-slides-item__imagesrc").src,
+                        athleteMedalIcon: athleteItem.querySelector(".athlete-slider-slides-item__medalicon").innerText,
                     };
 
-                    //console.log(document.querySelector(".athlete-slider-slides-item").innerHTML);
-                    console.log(athleteInfos.athleteIcon);
 
                     athleteItem.addEventListener("click", () => {
                         this.athleteItem.classList.add('athlete-item-visible');
@@ -95,10 +95,11 @@ const AthleteSlider = {
                             '            </div>\n' +
                             '            <div class="athlete-item-description-datas">\n' +
                             '                <div class="athlete-item-description-medals">\n' +
-                            '                    <p class="athlete-item-description-title">MEDAILLES</p>\n' +
+                            '                    <p class="athlete-item-description-title athlete-item-description-title-margin">MEDAILLES</p>\n' +
+                            '                <img src="' +athleteInfos.athleteMedalIcon+ '.svg' +'">' +
                             '                </div>\n' +
                             '                <div class="athlete-item-description-origin">\n' +
-                            '                    <p class="athlete-item-description-title">ORIGINAIRE DE</p>\n' +
+                            '                    <p class="athlete-item-description-title athlete-item-description-title-margin">ORIGINAIRE DE</p>\n' +
                             '                <img src="' +athleteInfos.athleteTown+ '.svg' +'">' +
                             '                </div>\n' +
                             '            </div>\n' +
