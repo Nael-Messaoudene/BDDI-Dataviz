@@ -66,50 +66,36 @@
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
         line-height: 30px;
-        border-radius: 20px;
+        border-radius: 70px;
         background-color: $green;
         transition: all 0.2s ease;
         position: relative;
         z-index: 1;
 
-        &:after {
+        &:before {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: $green;
-            z-index: -2;
-            border-radius: 20px;
-        }
-        &:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background-color: darken($green, 15%);
-            transition: all .3s;
+            background-color: darken($green, 10%);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform .3s;
             z-index: -1;
-            border-radius: 20px
+            border-radius: 70px
         }
 
         &:hover {
             cursor: pointer;
-            font-size: 18px;
             &:before {
-                width: 100%;
+                transform: scaleX(1);
             }
         }
     }
 
     @include mq-to-1280() {
-
-        .wrapper {
-
-        }
 
         &-stephane, &-manon {
             max-width: 30%;
