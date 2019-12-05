@@ -63,7 +63,7 @@
     position: relative;
 
     .is-selected {
-
+        pointer-events: all;
 
       .athlete-slider-slides-item__image {
 
@@ -91,6 +91,7 @@
     }
 
     &-item {
+      pointer-events: none;
 
       &:hover {
         cursor: pointer;

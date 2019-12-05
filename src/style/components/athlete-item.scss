@@ -9,12 +9,12 @@
   align-items: center;
   justify-content: center;
   color: white;
-  transform: translateX(-100%);
+  transform: translateY(100%);
   transition: all 1s ease;
   z-index: 2;
 
   &-visible {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 
   &-backgroundname {
@@ -24,10 +24,11 @@
     opacity: 0.03;
     position: absolute;
     left: 68%;
-    line-height: 208px;
+    line-height: 150px;
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
+    text-transform: uppercase;
   }
 
   &-close {
