@@ -8,6 +8,7 @@ import AthleteSlider from "./scripts/athlete-slider";
 import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
+import homeScreenAnimation from './scripts/homeScreen-animations'
 
 //Component LoadingScreen
 const loadingscreen = ((loadingscreen) => {
@@ -41,7 +42,7 @@ const App = {
             new conversation();
             new athlete();
             new Popin();
-
+            new homeScreenAnimation();
         });
     }
 };
