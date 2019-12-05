@@ -128,7 +128,9 @@ class athleteNumber {
 
         function myCallback () {
 
+            gsap.to('.wrap-content',{duration:0.5,opacity:1});
             gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:3});
+            gsap.to('.btn-transform',{opacity: 1, duration:1, delay:3.5});
             bars.transition()
                 .duration(1000)
                 .delay(3000)
@@ -168,9 +170,11 @@ class athleteNumber {
 
         ScrollReveal().reveal('.chart-container', {
             afterReveal: myCallback,
+            distance: '10px',
             viewOffset: {
-                top: 200,
+                top: 600,
             },
+            viewFactor: 0
         });
 
 
