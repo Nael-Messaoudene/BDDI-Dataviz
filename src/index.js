@@ -9,6 +9,7 @@ import conversation from './scripts/conversation'
 
 //Component LoadingScreen
 const loadingscreen = ((loadingscreen) => {
+    loadingscreen.goToTop();
     loadingscreen.iconsMorphing();
     loadingscreen.animateScreens();
 })(LoadingScreen);
@@ -37,7 +38,6 @@ const App = {
         window.addEventListener('DOMContentLoaded', () => {
             new conversation();
             new athlete();
-
         });
     }
 };

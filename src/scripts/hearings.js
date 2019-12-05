@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import ScrollReveal from 'scrollreveal';
 
 const Hearings = {
     el: document.querySelector('.hearings'),
@@ -215,21 +216,31 @@ const Hearings = {
 
         const totalLength = [path._groups[0][0].getTotalLength(), path._groups[0][1].getTotalLength()];
 
-        d3.select(path._groups[0][0])
-            .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
-            .attr("stroke-dashoffset", totalLength[0])
-            .transition()
-            .duration(6000)
-            .ease(d3.easeLinear)
-            .attr("stroke-dashoffset", 0);
+        function animateLines (el) {
+            d3.select(path._groups[0][0])
+                .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
+                .attr("stroke-dashoffset", totalLength[0])
+                .transition()
+                .duration(6000)
+                .ease(d3.easeLinear)
+                .attr("stroke-dashoffset", 0);
 
-        d3.select(path._groups[0][1])
-            .attr("stroke-dasharray", totalLength[1] + " " + totalLength[1] )
-            .attr("stroke-dashoffset", totalLength[1])
-            .transition()
-            .ease(d3.easeLinear)
-            .duration(6000)
-            .attr("stroke-dashoffset", 0);
+            d3.select(path._groups[0][1])
+                .attr("stroke-dasharray", totalLength[1] + " " + totalLength[1] )
+                .attr("stroke-dashoffset", totalLength[1])
+                .transition()
+                .ease(d3.easeLinear)
+                .duration(6000)
+                .attr("stroke-dashoffset", 0);
+        }
+
+        ScrollReveal().reveal('.hearings', {
+            duration: 1000,
+            distance: '-200px',
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            origin: 'top',
+            afterReveal: animateLines
+        });
 
 
 
