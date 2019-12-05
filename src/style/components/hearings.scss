@@ -78,12 +78,26 @@
 
     &-alert {
       padding: 20px 23px;
-      background-color: rgba(131,56,236,0.1);
-      display: inline-block;
+      background-color: rgba(255, 208, 88,0.1);
       font-size: 20px;
       @include content();
       margin-top: 35px;
-      color: $purple;
+      color: $yellow;
+      border-radius: 8px;
+      border: solid 2px $yellow;
+      display: inline-block;
+      align-items: center;
+
+      svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 12px;
+        display: inline-block;
+        vertical-align: middle;
+        path {
+          fill: $yellow;
+        }
+      }
     }
   }
 

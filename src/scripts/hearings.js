@@ -139,7 +139,6 @@ const Hearings = {
         lines.selectAll("circle-group")
             .data(data).enter()
             .append("g")
-            .style("fill", "white")
             .style("stroke", (d, i) => color[i])
             .style("stroke-width", 3)
             .selectAll("circle")
@@ -200,6 +199,10 @@ const Hearings = {
             .attr("stroke-width", "1")
             .attr("transform", `translate(0, ${height-margin})`)
             .call(xAxis)
+            .selectAll("text")
+            .attr("transform", "translate(0,15)")
+            .style("font-size", 20)
+
 
         svg.selectAll("path").attr("fill", "none");
 
@@ -208,6 +211,9 @@ const Hearings = {
             .attr("fill", "white")
             .attr("stroke-width", "1")
             .call(yAxis)
+            .selectAll("text")
+            .attr("transform", "translate(-10,0)")
+            .style("font-size", 20)
             .append('text')
             .attr("y", 15)
             .attr("transform", "rotate(-90)")
