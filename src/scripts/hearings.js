@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import ScrollReveal from 'scrollreveal';
 
 const Hearings = {
     el: document.querySelector('.hearings'),
@@ -30,8 +31,20 @@ const Hearings = {
             },
         ];
 
-        const width = 800;
-        const height = 340;
+
+        let width = 800;
+        let height = 340;
+        console.log(window.innerWidth)
+
+        if (window.innerWidth < 1280) {
+            width = 500;
+            height = 250;
+        }
+
+        if (window.innerWidth < 600) {
+            width = 350;
+        }
+
         const margin = 50;
         const duration = 250;
 
@@ -172,13 +185,20 @@ const Hearings = {
             });
 
         /* Add Axis into SVG */
-        var xAxis = d3.axisBottom(xScale).ticks(5);
-        var yAxis = d3.axisLeft(yScale)
+        var xAxis = d3.axisBottom(xScale)
             .ticks(5)
+            .tickSize(0)
+
+        var yAxis = d3.axisLeft(yScale)
+            .ticks(6)
+            .tickSize(-width);
+
+
+
 
         svg.append("g")
             .attr("class", "x axis hearings-graph-axisTest grid")
-            .attr("stroke-width", "0")
+            .attr("stroke-width", "1")
             .attr("transform", `translate(0, ${height-margin})`)
             .call(xAxis)
 
@@ -187,7 +207,7 @@ const Hearings = {
         svg.append("g")
             .attr("class", "y axis hearings-graph-axisTest")
             .attr("fill", "white")
-            .attr("stroke-width", "0")
+            .attr("stroke-width", "1")
             .call(yAxis)
             .append('text')
             .attr("y", 15)
@@ -196,21 +216,31 @@ const Hearings = {
 
         const totalLength = [path._groups[0][0].getTotalLength(), path._groups[0][1].getTotalLength()];
 
-        d3.select(path._groups[0][0])
-            .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
-            .attr("stroke-dashoffset", totalLength[0])
-            .transition()
-            .duration(6000)
-            .ease(d3.easeLinear)
-            .attr("stroke-dashoffset", 0);
+        function animateLines (el) {
+            d3.select(path._groups[0][0])
+                .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
+                .attr("stroke-dashoffset", totalLength[0])
+                .transition()
+                .duration(6000)
+                .ease(d3.easeLinear)
+                .attr("stroke-dashoffset", 0);
 
-        d3.select(path._groups[0][1])
-            .attr("stroke-dasharray", totalLength[1] + " " + totalLength[1] )
-            .attr("stroke-dashoffset", totalLength[1])
-            .transition()
-            .ease(d3.easeLinear)
-            .duration(6000)
-            .attr("stroke-dashoffset", 0);
+            d3.select(path._groups[0][1])
+                .attr("stroke-dasharray", totalLength[1] + " " + totalLength[1] )
+                .attr("stroke-dashoffset", totalLength[1])
+                .transition()
+                .ease(d3.easeLinear)
+                .duration(6000)
+                .attr("stroke-dashoffset", 0);
+        }
+
+        ScrollReveal().reveal('.hearings', {
+            duration: 1000,
+            distance: '-200px',
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            origin: 'top',
+            afterReveal: animateLines
+        });
 
 
 
