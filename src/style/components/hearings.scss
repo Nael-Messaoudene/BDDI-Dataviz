@@ -4,6 +4,13 @@
     padding: 70px 0;
   }
 
+  &-info {
+    @include content();
+    color: white;
+    font-style: italic;
+    font-size: 15px;
+  }
+
   &__title {
     font-family: Calistoga;
     font-size: 60px;
@@ -21,6 +28,7 @@
 
   &-graph {
     margin-right: 40px;
+    opacity: 0;
 
     .domain {
       display: none;
@@ -63,8 +71,8 @@
       }
 
       &__paralympic {
-        background-color: rgba(255,208,88,0.1);
-        color: $yellow;
+        background-color: rgba(131, 56, 236, 0.1);
+        color: $purple;
       }
     }
 

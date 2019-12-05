@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import ScrollReveal from 'scrollreveal';
+import gsap from "gsap";
 
 const Hearings = {
     el: document.querySelector('.hearings'),
@@ -76,7 +77,7 @@ const Hearings = {
             .domain([0, d3.max(data[0].values, d => d.hearings)])
             .range([height-margin, 0]);
 
-        var color = ["#64DFC7", "#FFD058"];
+        var color = ["#64dfc7", "#8338ec"];
 
         var svg = d3.select(".hearings-graph").append("svg")
             .attr("width", (width+margin)+"px")
@@ -150,11 +151,9 @@ const Hearings = {
                     .style("cursor", "pointer")
                     .append("text")
                     .attr("class", "hearings-graph-hoverCircle text")
-                    .style('stroke', 'black')
+                    .style('stroke', 'white')
                     .style("stroke-width", 0)
-                    .style('fill', 'black')
-                    .transition()
-                    .duration(1000)
+                    .style('fill', 'white')
                     .text(`${d.hearings} millions`)
                     .attr("x", d => xScale(d.date) + 50)
                     .attr("y", d => yScale(d.hearings) - 10);
@@ -216,7 +215,9 @@ const Hearings = {
 
         const totalLength = [path._groups[0][0].getTotalLength(), path._groups[0][1].getTotalLength()];
 
-        function animateLines (el) {
+        function animateLines () {
+
+            gsap.to(".hearings-graph", { duration: 0.3, opacity: 1 });
             d3.select(path._groups[0][0])
                 .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
                 .attr("stroke-dashoffset", totalLength[0])
