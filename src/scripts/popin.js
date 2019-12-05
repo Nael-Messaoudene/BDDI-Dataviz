@@ -72,6 +72,8 @@ class Popin {
                 window.scrollTo(0,0);
             })
 
+            gsap.set('body', {overflow: 'initial'});
+
 
 
         }
