@@ -28,6 +28,11 @@
     font-size: 60px;
     color: $white;
     text-align: center;
+
+    @include mq-to-1280 {
+        font-size: 40px;
+        line-height: 45px;
+    }
   }
   svg {
       transform: scale(.6) translate(0, -100px);
