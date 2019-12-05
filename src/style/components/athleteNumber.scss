@@ -1,0 +1,229 @@
+//.bar-chart {
+//  background-color: #C7D9D9;
+//
+//}
+
+.chart-container{
+  position: relative;
+  display: flex;
+  padding: 80px;
+  flex-direction: column;
+}
+.chart-title{
+  @include title;
+  font-size: 40px;
+  margin: 0;
+  color: $white;
+  width: 760px
+}
+.box{
+  transform-origin: bottom;
+}
+.rect-item{
+  transform-origin: bottom;
+}
+.sport-info{
+  @include primarySubtitle();
+  font-size: 18px;
+}
+
+.bar-chart{
+  position: relative;
+}
+
+.chart-number{
+  color: $yellow;
+  @include primarySubtitle;
+  font-size: 40px;
+  opacity: 0;
+}
+
+.chart-sport{
+  color: $yellow;
+  @include primarySubtitle;
+  font-size: 12px;
+  opacity: 0;
+}
+.chart-percent{
+  color: $white;
+  @include primarySubtitle;
+  font-size: 15px;
+  display: none;
+}
+
+.sport-1{
+  top: 345px;
+  left: 195px;
+  position: absolute;
+}
+.number-1{
+  position: absolute;
+  top: 295px;
+}
+.percent-1{
+  display: flex;
+  position: absolute;
+  top: 490px;
+  z-index: 7;
+  font-size: 30px;
+  left: 130px;
+  opacity: 0;
+}
+.sport-2{
+  color: $green;
+  top: 568px;
+  left: 388px;
+  position: absolute;
+}
+.number-2{
+  color: $green;
+  position: absolute;
+  top: 515px;
+  left: 290px;
+}
+.wrap-content{
+  display: flex;
+  opacity: 0;
+  @media(max-width: 1180px){
+    flex-direction: column;
+  }
+}
+.bar-chart{
+  width: 500px;
+  position: relative;
+}
+.msg {
+  display: flex;
+  width: 700px;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 30px;
+  position: relative;
+  @media(max-width: 1180px){
+    width: 100%;
+    margin-top: 20px;
+   }
+  &-box{
+    @include content();
+    background: $purple;
+    color: $white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 70%;
+    font-size: 18px;
+    height: fit-content;
+    align-self: flex-end;
+    margin-bottom: 15px;
+    margin-top: 0;
+    @media(max-width: 1180px){
+      margin-right: 20px;
+    }
+  }
+  &-user{
+    position: absolute;
+    bottom: 300px;
+    right: -90px;
+    background-image: url("/assets/images/bg-shape.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    @media(max-width: 1180px){
+      margin-right: 20px;
+      bottom: 140px;
+    }
+    img{
+      width: 80%;
+    }
+
+  }
+}
+
+
+////
+button:focus {outline:0;}
+
+.btn-transform{
+  @include secondarySubtitle();
+  width: fit-content;
+  position: absolute;
+  top: 510px;
+  left: 300px;
+  border-radius: 70px;
+  background: $white;
+  font-size: 12px;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  opacity:0;
+  img{
+    width: 12px;
+    transform: rotate(-90deg);
+    margin-left: 5px;
+  }
+
+}
+.msg-received{
+  background: #404040;
+  margin-right: 60px;
+}
+
+.user-send{
+  background-image: url("/assets/images/bg-shape.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 70px;
+  display: flex;
+  margin-right: 20px;
+  img{
+    width: 80%;
+  }
+}
+
+.send-wrap{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+//////
+
+.numbergroup-1{
+  position: absolute;
+  top: 483px;
+  z-index: 7;
+  left: 103px;
+}
+.sportgroup-1{
+  position: absolute;
+  left: 180px;
+  top: 493px;
+  z-index: 7;
+}
+
+.numbergroup-2{
+  position: absolute;
+  top: 600px;
+  z-index: 7;
+  left: 318px;
+}
+
+.sportgroup-2{
+  position: absolute;
+  left: 370px;
+  top: 610px;
+  z-index: 7;
+}
+
+.numbergroup{
+  color: $white;
+}
+
+.sportgroup{
+  color: $white;
+}
+
+.numtransform{
+  opacity: 0;
+}

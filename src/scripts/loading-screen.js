@@ -12,6 +12,12 @@ const LoadingScreen = {
     icons       : document.querySelector('.loading-screen-icons'),
     iconsWrapper: document.querySelector('.loading-screen-icons-wrapper'),
 
+    goToTop() {
+        window.onbeforeunload = () => {
+            window.scrollTo(0, 0);
+        }
+    },
+
     animateScreens() {
         const tl = gsap.timeline();
         tl.to(this.view2, {scaleX: 1, duration: .6, ease: "expo.out"}, .6);
