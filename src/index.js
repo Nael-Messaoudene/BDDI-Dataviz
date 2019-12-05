@@ -1,5 +1,7 @@
 import "./style/styles.scss";
+
 import LoadingScreen from "./scripts/loading-screen";
+import Popin from "./scripts/popin";
 import athlete from './scripts/athlete-number'
 import AthleteSlider from "./scripts/athlete-slider";
 
@@ -38,6 +40,8 @@ const App = {
         window.addEventListener('DOMContentLoaded', () => {
             new conversation();
             new athlete();
+            new Popin();
+
         });
     }
 };
