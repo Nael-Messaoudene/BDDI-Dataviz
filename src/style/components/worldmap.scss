@@ -5,14 +5,14 @@
   align-items: center;
 
 
-  .q0-7{fill: $white;border: 1px solid $white;}
-  .q1-7{fill: $purple-0;border: 1px solid $purple-0;}
-  .q2-7{fill: $purple-10;border: 1px solid $purple-10;}
-  .q3-7{fill: $purple-20;border: 1px solid $purple-20;}
-  .q4-7{fill: $purple-30;border: 1px solid $purple-30;}
-  .q5-7{fill: $purple-40;border: 1px solid $purple-40;}
-  .q6-7{fill: $purple-50;border: 1px solid $purple-50;}
-  .q7-7{fill: $purple-60;border: 1px solid $purple-60;}
+  .q0-7{fill: $white;border: 2px solid $white;}
+  .q1-7{fill: $purple-0;border: 2px solid $purple-0;}
+  .q2-7{fill: $purple-10;border: 2px solid $purple-10;}
+  .q3-7{fill: $purple-20;border: 2px solid $purple-20;}
+  .q4-7{fill: $purple-30;border: 2px solid $purple-30;}
+  .q5-7{fill: $purple-40;border: 2px solid $purple-40;}
+  .q6-7{fill: $purple-50;border: 2px solid $purple-50;}
+  .q7-7{fill: $purple-60;border: 2px solid $purple-60;}
 
   .l0-7{fill: $purple-0;}
   .l1-7{fill: $purple-10;}
@@ -74,11 +74,11 @@
       &-content {
           position: absolute;
           top: -80px;
-          left: 190px;
+          left: 140px;
           min-width: 200px;
           text-align: center;
           color: $white;
-          padding: 20px 30px 10px 30px;
+          padding: 20px 0 10px 0;
           width: fit-content;
           background-color: $gray;
           border-radius: 20px;
@@ -102,10 +102,10 @@
             position: absolute;
             top: -30px;
             left: 40px;
-            width: 150px;
+            width: 100px;
             transform: scaleX(0);
             transform-origin: left;
-            border-bottom: 1px solid;
+            border-bottom: 2px solid;
           }
           .diag {
               position: absolute;
@@ -114,7 +114,7 @@
               width: 50px;
               transform: scaleX(0);
               transform-origin: left;
-              border-bottom: 1px dashed;
+              border-bottom: 2px dashed;
           }
           .circle {
             opacity: 0;
@@ -124,7 +124,7 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            border: 1px solid;
+            border: 2px solid;
           }
 
           &-0 {.straight, .diag, .circle{border-color: $purple-60;}}

@@ -10,11 +10,11 @@
   flex-direction: column;
 }
 .chart-title{
-  @include title;
-  font-size: 40px;
-  margin: 0;
+  font-family: "Calistoga", sans-serif;
+  font-size: 60px;
   color: $white;
-  width: 760px
+  text-align: center;
+  margin: 0 auto 40px auto;
 }
 .box{
   transform-origin: bottom;
