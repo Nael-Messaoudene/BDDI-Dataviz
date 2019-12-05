@@ -7,38 +7,44 @@ import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
 
-//Component LoadingScreen
-const loadingscreen = ((loadingscreen) => {
-    loadingscreen.goToTop();
-    loadingscreen.iconsMorphing();
-    loadingscreen.animateScreens();
-})(LoadingScreen);
+if (window.location.href == "http://localhost:1234/form.html") {
+    console.log("index")
+} else {
+    //Component LoadingScreen
+    const loadingscreen = ((loadingscreen) => {
+        loadingscreen.goToTop();
+        loadingscreen.iconsMorphing();
+        loadingscreen.animateScreens();
+    })(LoadingScreen);
 
 //Component LoadingScreen
-const worldmap = ((worldmap) => {
-    worldmap.initMap();
-})(Worldmap);
+    const worldmap = ((worldmap) => {
+        worldmap.initMap();
+    })(Worldmap);
 
 
 //Component AthleteSlider
-const athleteslider = ((athleteslider) => {
-    athleteslider.getAthletesDatas();
-    athleteslider.displayAthletes();
-    athleteslider.slideAthletes();
-})(AthleteSlider);
+    const athleteslider = ((athleteslider) => {
+        athleteslider.getAthletesDatas();
+        athleteslider.displayAthletes();
+        athleteslider.slideAthletes();
+    })(AthleteSlider);
 
-const hearings = ((hearings) => {
-    hearings.drawGraph();
-})(Hearings);
+    const hearings = ((hearings) => {
+        hearings.drawGraph();
+    })(Hearings);
 
 
-const App = {
+    const App = {
 
-    init(){
-        window.addEventListener('DOMContentLoaded', () => {
-            new conversation();
-            new athlete();
-        });
-    }
-};
-App.init();
+        init(){
+            window.addEventListener('DOMContentLoaded', () => {
+                new conversation();
+                new athlete();
+            });
+        }
+    };
+    App.init();
+}
+
+
