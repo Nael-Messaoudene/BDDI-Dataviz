@@ -198,6 +198,9 @@
     }
 }
 
+.blob g{
+    transform: translate(300px,300px);
+}
 
 .blob  path {
     animation: blob 7s linear  infinite;
