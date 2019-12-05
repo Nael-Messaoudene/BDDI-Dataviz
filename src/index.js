@@ -6,9 +6,13 @@ import AthleteSlider from "./scripts/athlete-slider";
 import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
+import Form from "./scripts/form";
 
 if (window.location.href == "http://localhost:1234/form.html") {
-    console.log("index")
+    //Component Form
+    const form = ((form) => {
+        form.initForm();
+    })(Form);
 } else {
     //Component LoadingScreen
     const loadingscreen = ((loadingscreen) => {
@@ -17,7 +21,7 @@ if (window.location.href == "http://localhost:1234/form.html") {
         loadingscreen.animateScreens();
     })(LoadingScreen);
 
-//Component LoadingScreen
+//Component Worldmap
     const worldmap = ((worldmap) => {
         worldmap.initMap();
     })(Worldmap);

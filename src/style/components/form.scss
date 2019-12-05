@@ -1,3 +1,93 @@
 .form {
+  color: white;
+  input, textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin: 20px;
+    padding: 15px 20px;
+    background-color: $gray-dark;
+    color: $white;
+    border: none;
+    border-radius: 10px;
 
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: rgba(255,255,255,0.2);
+    }
+  }
+
+  h2 {
+    margin: 80px 0 40px 0;
+    font-family: 'Calistoga';
+    font-size: 60px;
+    text-align: center;
+  }
+  h3 {
+    font-family: 'Montserrat Medium';
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+
+  .steps {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      margin: 0 auto 60px auto;
+      padding-bottom: 20px;
+      .step {
+          display: flex;
+          width:50px;
+          height:50px;
+          margin: 10px;
+          border: solid 4px $gray-dark;
+          border-radius: 50%;
+          font-family:'Montserrat Medium', sans-serif;
+          font-size: 30px;
+          color: $gray-dark;
+          transition: all .3s ease-in-out;
+
+          &-active {
+              width:60px;
+              height:60px;
+              margin: 20px;
+              box-shadow: 0 0 12px 0 $purple;
+              border-color: $purple;
+              font-size: 40px;
+              color: $purple;
+          }
+          span {
+              display: flex;
+              margin: auto;
+          }
+      }
+      .separator {
+        width: 100px;
+        height: 4px;
+        background-color: $gray-dark;
+      }
+  }
+
+  .inputs {
+    display: none;
+
+    &-active {
+      display: flex;
+    }
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+
+      textarea {
+        width: calc(100% - 80px);
+      }
+    }
+
+    &-row {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
