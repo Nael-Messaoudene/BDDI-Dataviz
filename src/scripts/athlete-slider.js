@@ -95,11 +95,11 @@ const AthleteSlider = {
                             '            </div>\n' +
                             '            <div class="athlete-item-description-datas">\n' +
                             '                <div class="athlete-item-description-medals">\n' +
-                            '                    <p class="athlete-item-description-title">MEDAILLES</p>\n' +
+                            '                    <p class="athlete-item-description-title athlete-item-description-title-margin">MEDAILLES</p>\n' +
                             '                <img src="' +athleteInfos.athleteMedalIcon+ '.svg' +'">' +
                             '                </div>\n' +
                             '                <div class="athlete-item-description-origin">\n' +
-                            '                    <p class="athlete-item-description-title">ORIGINAIRE DE</p>\n' +
+                            '                    <p class="athlete-item-description-title athlete-item-description-title-margin">ORIGINAIRE DE</p>\n' +
                             '                <img src="' +athleteInfos.athleteTown+ '.svg' +'">' +
                             '                </div>\n' +
                             '            </div>\n' +
