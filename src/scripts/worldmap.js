@@ -1,22 +1,35 @@
 import * as d3 from "d3";
+import TweenLite from "gsap";
 
 const WorldMap = {
 
     initMap() {
 
+        function tooltipAnimationHandler(hovered) {
+            const circle        = document.querySelector('.circle');
+            const diag          = document.querySelector('.diag');
+            const straight      = document.querySelector('.straight');
+
+            if (hovered) {
+                TweenLite.to(circle, .3, {opacity:1, ease: "expo.out"});
+                TweenLite.to(diag, .3, {scaleX:1, rotation:-45, ease: "expo.out", delay: .3});
+                TweenLite.to(straight, .3, {scaleX:1, ease: "expo.out", delay: .6});
+            } else {
+                TweenLite.to(straight, .3, {scaleX:0, ease: "expo.out"});
+                TweenLite.to(diag, .3, {scaleX:0, rotation:-45, ease: "expo.out", delay: .3});
+                TweenLite.to(circle, .3, {opacity:1, ease: "expo.out", delay: .6});
+            }
+        }
+
         // --- create tooltip dom
-        const test = document.querySelector(".tooltip");
+        const tooltipdom = document.querySelector(".tooltip");
         const tooltip = d3.select(".tooltip");
         const tooltipcontent = d3.select(".tooltip-content");
         const tooltipindicator = d3.select(".tooltip-indicator");
         // MOUSE
-        let mx = 0;
-        let my = 0;
         document.addEventListener("mousemove", function(e) {
-            test.style.top = e.pageY + "px";
-            test.style.left = e.pageX + "px";
-            mx = e.clientX;
-            my = e.clientY;
+            tooltipdom.style.top = e.pageY - 5 + "px";
+            tooltipdom.style.left = e.pageX - 5 + "px";
         });
 
         // INIT WORLDMAP DOM
@@ -27,7 +40,7 @@ const WorldMap = {
         const projection = d3.geoMercator()
             .center([2.454071, 46.279229])
             .scale(200)
-            .translate([width / 2, height / 2]);
+            .translate([width/1.5, height / 2 - 150]);
 
         path.projection(projection);
 
@@ -38,8 +51,6 @@ const WorldMap = {
 
         const countries = svg.append("g")
             .attr("class", "container");
-
-
 
         // --- init data
         const   proxyUrl    = 'https://cors-anywhere.herokuapp.com/',
@@ -66,26 +77,38 @@ const WorldMap = {
 
             // CREATE LEGEND
             const legend = svg.append('g')
-                .attr('transform', 'translate(70, 500)')
-                .attr('id', 'legend');
+                .attr('transform', 'translate(70, 100)')
+                .attr('class', 'legend');
 
             legend.selectAll('.colorbar')
                 .data(d3.range(7))
                 .enter().append('svg:rect')
-                .attr('y', function(d) { return d * 2 * 20 + 'px'; })
-                .attr('height', '20px')
-                .attr('width', '20px')
-                .attr('x', '0px')
+                .attr('y', function(d) { return d  * 50 + 'px'; })
+                .attr('height', '50px')
+                .attr('width', '50px')
+                .attr('x', '-200px')
                 .attr("class", function(d) { return "q" + d + "-7"; });
 
             const legendScale = d3.scaleLinear()
                 .domain([0, d3.max(csv, function(e) { return +e.athletes; })])
-                .range([0, 7 * 20 *2 ]);
+                .range([0, 7 * 48 ]);
 
             const legendAxis = svg.append("g")
-                .attr('transform', 'translate(50, 500)')
-                .attr('id', 'legendaxis')
-                .call(d3.axisLeft(legendScale).ticks(6));
+                .attr('transform', 'translate(-25, 100)')
+                .attr('class', 'legendaxis')
+                .call(d3.axisRight(legendScale).ticks(4));
+
+            const legendLabel1 = svg.append("text")
+                .attr("class", "legendlabel")
+                .attr('y', '0px')
+                .attr('x', '-130px')
+                .html("Nombre d'athlètes");
+
+            const legendLabel2 = svg.append("text")
+                .attr("class", "legendlabel")
+                .attr('y', '35px')
+                .attr('x', '-130px')
+                .html("paralympiques");
 
             // USE NON-LINEAR SCALE FOR COLORS
             const quantize = d3.scaleQuantile()
@@ -99,17 +122,19 @@ const WorldMap = {
                     .attr("class", function() { return "country q" + quantize(Math.sqrt(+e.athletes)) + "-7"; })
                     // UPDATE TOOLTIP CONTENT AND POSITION GIVEN THE COUNTRY HOVERED
                     .on("mouseover", function() {
+                        tooltipAnimationHandler(true);
                         tooltip.transition()
                             .duration(200)
                             .style("opacity", .9);
                         tooltipcontent
-                            .html("<h3>" + e.Country + "</h3><br>"
-                                + "<p>" + e.athletes + " athlètes</p><br>")
+                            .html("<h3 class='countryname'>" + e.Country + "</h3><br>"
+                                + "<p class='athletescount'>" + e.athletes + " athlètes</p><br>")
                             .attr("class", function() { return "tooltip-content q" + quantize(Math.sqrt(+e.athletes)) + "-7"; });
                         tooltipindicator
                             .attr("class", function() { return "tooltip-indicator tooltip-indicator-" + quantize(Math.sqrt(+e.athletes)); });
                     })
                     .on("mouseout", function() {
+                        tooltipAnimationHandler(false);
                         tooltip
                             .style("opacity", 0);
                         tooltipcontent
@@ -120,8 +145,6 @@ const WorldMap = {
                     });
             });
         });
-
-
     }
 };
 
