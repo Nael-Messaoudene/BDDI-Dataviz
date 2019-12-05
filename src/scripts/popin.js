@@ -40,7 +40,7 @@ class Popin {
     popin(){
 
         function displayEndPopin(){
-            gsap.to('#end',{duration:1, display:'flex'});
+            gsap.fromTo('#end',{ display:'none',yPercent: -100},{duration:1, display:'flex', opacity:1, yPercent: 0});
             gsap.to('.popin',{duration:1,position: 'fixed'});
             gsap.set('body', {overflow: 'hidden'});
 
