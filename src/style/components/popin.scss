@@ -1,5 +1,4 @@
 .popin {
-    display: flex;
     position: absolute;
     top: 0;
     width: 100vw;
@@ -7,6 +6,7 @@
     backdrop-filter: blur(12px);
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
+    opacity: 0;
 
     &-bg {
 
