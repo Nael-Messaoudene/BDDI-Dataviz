@@ -83,6 +83,7 @@
 }
 .wrap-content{
   display: flex;
+  opacity: 0;
   @media(max-width: 1180px){
     flex-direction: column;
   }
@@ -141,10 +142,26 @@
 
 
 ////
+button:focus {outline:0;}
+
 .btn-transform{
+  @include secondarySubtitle();
   width: fit-content;
   position: absolute;
-  top: 50%;
+  top: 510px;
+  left: 300px;
+  border-radius: 70px;
+  background: $white;
+  font-size: 12px;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  opacity:0;
+  img{
+    width: 12px;
+    transform: rotate(-90deg);
+    margin-left: 5px;
+  }
+
 }
 .msg-received{
   background: #404040;

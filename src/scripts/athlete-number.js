@@ -69,38 +69,6 @@ class athleteNumber {
             .attr("height", 1);
 
 
-        gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:3});
-       let r = bars.transition()
-            .duration(1000)
-            .delay(3000)
-            .attr("y", function(d) {
-                return svgHeight - (d.value);  //Height minus data value
-            })
-            .attr("height", function(d) {
-                return d.value ;
-            });
-
-
-        // conversation
-
-        let tl = gsap.timeline();
-        tl.set('.bar-chart',{opacity:0});
-        tl.set('.msg-send-2',{opacity:0});
-        tl.set('.user-send',{opacity:0});
-        tl.set('.msg-received',{opacity:0});
-        tl.fromTo('.msg-send-1', {opacity: 0, y: 200},
-            {opacity: 1, duration: 1, y: 100});
-        tl.fromTo('.msg-send-2', {opacity: 0, y: 50},
-            {opacity: 1, duration: 1, y: 0, delay:0.5});
-        tl.to('.msg-send-1', { duration: 1, y: 0}, 1.3);
-
-
-        /// end conversation
-
-        gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
-        gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
-        gsap.to('.numtransform', {opacity:0,delay:4.00000001, duration:1});
-
 
         console.log(document.querySelector('.numbergroup-1').innerHTML);
 
@@ -109,6 +77,7 @@ class athleteNumber {
 
         transformation.addEventListener('click', ()=>{
 
+            gsap.to('.btn-transform',{duration:0.2,display:'none',opacity:0});
 
             gsap.to('.user-send', { duration: 1, opacity:1, y: 0,delay:1});
             gsap.fromTo('.msg-received', {opacity: 0, y: 10},
@@ -155,6 +124,57 @@ class athleteNumber {
             gsap.set('.sportgroup-2', {y: -15, delay:1, x: -30});
 
 
+        });
+
+        function myCallback () {
+
+            gsap.to('.wrap-content',{duration:0.5,opacity:1});
+            gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:3});
+            gsap.to('.btn-transform',{opacity: 1, duration:1, delay:3.5});
+            bars.transition()
+                .duration(1000)
+                .delay(3000)
+                .attr("y", function(d) {
+                    return svgHeight - (d.value);  //Height minus data value
+                })
+                .attr("height", function(d) {
+                    return d.value ;
+                });
+
+
+            // conversation
+
+            let tl = gsap.timeline();
+            tl.set('.bar-chart',{opacity:0});
+            tl.set('.msg-send-2',{opacity:0});
+            tl.set('.user-send',{opacity:0});
+            tl.set('.msg-received',{opacity:0});
+            tl.fromTo('.msg-send-1', {opacity: 0, y: 200},
+                {opacity: 1, duration: 1, y: 100});
+            tl.fromTo('.msg-send-2', {opacity: 0, y: 50},
+                {opacity: 1, duration: 1, y: 0, delay:0.5});
+            tl.to('.msg-send-1', { duration: 1, y: 0}, 1.3);
+
+
+            /// end conversation
+
+            gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
+            gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
+            gsap.to('.numtransform', {opacity:0,delay:4.00000001, duration:1});
+
+
+            gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
+            gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
+            gsap.to('.numtransform', {opacity:0,delay:4.00000001, duration:1});
+        }
+
+        ScrollReveal().reveal('.chart-container', {
+            afterReveal: myCallback,
+            distance: '10px',
+            viewOffset: {
+                top: 600,
+            },
+            viewFactor: 0
         });
 
 
