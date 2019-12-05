@@ -192,8 +192,6 @@ const Hearings = {
             .tickSize(-width);
 
 
-
-
         svg.append("g")
             .attr("class", "x axis hearings-graph-axisTest grid")
             .attr("stroke-width", "1")
