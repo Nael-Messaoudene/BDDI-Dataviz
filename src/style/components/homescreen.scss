@@ -4,7 +4,7 @@
     justify-content: center;
 
     &-manon, &-stephane {
-
+        transition: 100ms all ease;
         &__blob {
             position: absolute;
             left: 55%;
@@ -84,7 +84,7 @@
         a:hover {
             color: white;
         }
-      
+
         &:before {
             content: '';
             position: absolute;
