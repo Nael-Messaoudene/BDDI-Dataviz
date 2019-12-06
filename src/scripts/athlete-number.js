@@ -123,12 +123,13 @@ class athleteNumber {
 
         function myCallback () {
 
+            gsap.fromTo('.chart-container',{opacity:0},{opacity:1, duration: 0.5});
             gsap.to('.wrap-content',{duration:0.5,opacity:1});
-            gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:3});
+            gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:2});
             gsap.to('.btn-transform',{opacity: 1, duration:1, delay:3.5});
             bars.transition()
                 .duration(1000)
-                .delay(3000)
+                .delay(2000)
                 .attr("y", function(d) {
                     return svgHeight - (d.value);  //Height minus data value
                 })
@@ -153,13 +154,13 @@ class athleteNumber {
 
             /// end conversation
 
-            gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
-            gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
-            gsap.to('.numtransform', {opacity:0,delay:4.00000001, duration:1});
+            gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:3, duration:1});
+            gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:3, duration:1});
+            gsap.to('.numtransform', {opacity:0,delay:3.00000000000000, duration:1});
 
         }
 
-        ScrollReveal().reveal('.chart-container', {
+        ScrollReveal().reveal('.trigger-athlete', {
             afterReveal: myCallback,
             distance: '10px',
             viewOffset: {
