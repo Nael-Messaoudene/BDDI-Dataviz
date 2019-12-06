@@ -45,7 +45,10 @@ class Popin {
             let goBack = document.querySelector('#goToTop');
 
             goBack.addEventListener('click', function () {
-                window.scrollTo(0,0);
+
+                let map = document.querySelector('.worldmap');
+                map.scrollIntoView();
+
             });
 
             gsap.set('body', {overflow: 'initial'});

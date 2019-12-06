@@ -8,6 +8,8 @@
   display: flex;
   padding: 80px;
   flex-direction: column;
+  opacity: 0;
+  height: 100vh;
 }
 .chart-title{
   font-family: "Calistoga", sans-serif;
@@ -84,7 +86,7 @@
   color: $green;
   position: absolute;
   top: 515px;
-  left: 290px;
+  left: 267px;
 }
 .wrap-content{
   display: flex;
@@ -239,4 +241,12 @@ button:focus {outline:0;}
 
 .numtransform{
   opacity: 0;
+}
+
+
+.trigger-athlete{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 50%;
 }

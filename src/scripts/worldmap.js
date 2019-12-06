@@ -5,6 +5,7 @@ const WorldMap = {
 
     initMap() {
 
+
         function tooltipAnimationHandler(hovered) {
             const circle        = document.querySelector('.circle');
             const diag          = document.querySelector('.diag');
@@ -150,8 +151,16 @@ const WorldMap = {
                         tooltipindicator
                             .attr("class", "tooltip-indicator");
                     });
+
+
             });
+            let france = document.querySelector('#dFR');
+            france.addEventListener('click', function () {
+                let chart = document.querySelector('.chart-container');
+                chart.scrollIntoView();
+            })
         });
+
     }
 };
 
