@@ -57,15 +57,18 @@
           font-family:'Montserrat Medium', sans-serif;
           font-size: 30px;
           color: $gray-dark;
-          transition: all .3s ease-in-out;
+          transform-origin: center;
+          transition: transform .3s ease-in-out;
+
+          &:hover {
+            cursor: pointer;
+          }
 
           &-active {
-              width:60px;
-              height:60px;
-              margin: 20px;
+              transform: scale(1.2);
               box-shadow: 0 0 12px 0 $purple;
               border-color: $purple;
-              font-size: 40px;
+              font-size: 30px;
               color: $purple;
           }
           span {
