@@ -173,4 +173,11 @@
     }
 
   }
+
+  @include mq-to-1280 {
+    &-title {
+      font-size: 40px;
+      line-height: 45px;
+    }
+  }
 }
