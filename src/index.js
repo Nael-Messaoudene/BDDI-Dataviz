@@ -8,6 +8,7 @@ import AthleteSlider from "./scripts/athlete-slider";
 import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
+import HomeScreen from "./scripts/homescreen";
 import homeScreenAnimation from './scripts/homeScreen-animations'
 
 //Component LoadingScreen
@@ -16,6 +17,11 @@ const loadingscreen = ((loadingscreen) => {
     loadingscreen.iconsMorphing();
     loadingscreen.animateScreens();
 })(LoadingScreen);
+
+//Component HomeScreen
+const homescreen = ((homescreen) => {
+    homescreen.startStory();
+})(HomeScreen);
 
 //Component LoadingScreen
 const worldmap = ((worldmap) => {

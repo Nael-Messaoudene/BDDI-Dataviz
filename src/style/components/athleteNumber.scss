@@ -15,6 +15,11 @@
   color: $white;
   text-align: center;
   margin: 0 auto 40px auto;
+
+  @include mq-to-1280 {
+      font-size: 40px;
+      line-height: 45px;
+  }
 }
 .box{
   transform-origin: bottom;
@@ -156,7 +161,14 @@ button:focus {outline:0;}
   padding: 10px 40px;
   text-transform: uppercase;
   opacity:0;
-  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: ghostwhite;
+  }
+
   img{
     width: 12px;
     transform: rotate(-90deg);

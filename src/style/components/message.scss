@@ -44,6 +44,10 @@
 }
 .desktop-msg{
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @media( max-width: 1080px){
     display: none;
   }

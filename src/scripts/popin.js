@@ -46,7 +46,10 @@ class Popin {
 
             goBack.addEventListener('click', function () {
                 window.scrollTo(0,0);
-            })
+            });
+
+            gsap.set('body', {overflow: 'initial'});
+
         }
 
         ScrollReveal().reveal('.popin-evt', {
