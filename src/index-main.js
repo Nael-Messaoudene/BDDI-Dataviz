@@ -47,6 +47,8 @@ const App = {
         window.addEventListener('DOMContentLoaded', () => {
             new conversation();
             new athlete();
+            new Popin();
+            new homeScreenAnimation();
         });
     }
 };
