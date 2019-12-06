@@ -11,7 +11,7 @@ import Form from "./scripts/form";
 if (window.location.href == "http://localhost:1234/form.html") {
     //Component Form
     const form = ((form) => {
-        form.initForm();
+        form.form();
     })(Form);
 } else {
     //Component LoadingScreen

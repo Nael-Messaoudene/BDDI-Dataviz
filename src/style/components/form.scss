@@ -1,5 +1,6 @@
 .form {
   color: white;
+
   input, textarea {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
@@ -17,6 +18,16 @@
       color: rgba(255,255,255,0.2);
     }
   }
+
+  input {
+    width: 260px;
+    height: 30px;
+    &[type=number] {
+      width: 310px;
+    }
+  }
+
+
 
   h2 {
     margin: 80px 0 40px 0;
@@ -70,24 +81,96 @@
   }
 
   .inputs {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-500%, -500%);
+    display: flex;
+    width: fit-content;
+    margin: auto;
 
     &-active {
-      display: flex;
+      transform: translate(-50%, calc(-50% + 80px));
+    }
+
+    &-1 {
+      opacity: 1;
+      .inputs-group {margin-right: 0;}
+    }
+
+    &-2 {
+      width: 80%;
+      .inputs-group {
+        max-width: unset;
+        input {
+          margin-left: 0;
+          &:first-of-type {
+            margin-bottom: 80px;
+          }
+        }
+      }
+    }
+
+    &-4 {
+      input {
+        margin-left:0;
+        &[type=number] {
+          width: 160px;
+        }
+        &:last-child {
+          margin-right: 20px;
+        }
+      }
+
+      .inputs-group {
+        max-width: unset;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
 
     &-group {
       display: flex;
       flex-direction: column;
+      max-width: 620px;
+      margin-right: 80px;
 
       textarea {
-        width: calc(100% - 80px);
+        width: calc(100% - 20px);
+        max-height: 90px;
+        margin-left: 0;
+      }
+
+      select {
+        position: relative;
+        width: 310px;
+        height: 75px;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: $gray-dark;
+        color: $white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        border: none;
+        border-radius: 10px;
+        -webkit-appearance: none;
+        appearance: none;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
 
     &-row {
       display: flex;
       flex-direction: row;
+
+      input:first-of-type {
+        margin-left: 0;
+      }
     }
   }
 }
