@@ -175,13 +175,22 @@
   }
 
   .panel {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
     display: flex;
-    //display: none;
+    width: 60%;
     margin: 30px auto 0 auto;
     a {
+      position: absolute;
       text-decoration: none;
       color: $white;
     }
+
+    p:last-of-type {
+      margin-left: auto;
+    }
+
     .button {
       padding: 15px 40px;
       border: 2px solid $white;
@@ -193,7 +202,7 @@
       z-index: 1;
 
       &:first-child {
-        margin-right: 40px;
+        margin-right: 20px;
       }
 
       &:before {
