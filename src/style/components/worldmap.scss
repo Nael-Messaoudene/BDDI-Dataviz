@@ -1,50 +1,140 @@
-#worldmap {
+.worldmap {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  transform: scale(.8);
 
-  .q0-7{fill: $purple-0;}
-  .q1-7{fill: $purple-10;}
-  .q2-7{fill: $purple-20;}
-  .q3-7{fill: $purple-30;}
-  .q4-7{fill: $purple-40;}
-  .q5-7{fill: $purple-50;}
-  .q6-7{fill: $purple-60;}
-  .q7-7{fill: $white;}
+  .q0-7{fill: $white;border: 2px solid $white;}
+  .q1-7{fill: $purple-0;border: 2px solid $purple-0;}
+  .q2-7{fill: $purple-10;border: 2px solid $purple-10;}
+  .q3-7{fill: $purple-20;border: 2px solid $purple-20;}
+  .q4-7{fill: $purple-30;border: 2px solid $purple-30;}
+  .q5-7{fill: $purple-40;border: 2px solid $purple-40;}
+  .q6-7{fill: $purple-50;border: 2px solid $purple-50;}
+  .q7-7{fill: $purple-60;border: 2px solid $purple-60;}
+
+  .l0-7{fill: $purple-0;}
+  .l1-7{fill: $purple-10;}
+  .l2-7{fill: $purple-20;}
+  .l3-7{fill: $purple-30;}
+  .l4-7{fill: $purple-40;}
+  .l5-7{fill: $purple-50;}
+  .l6-7{fill: $purple-60;}
+
+  h2 {
+    margin: 60px 0;
+    font-family: "Calistoga", sans-serif;
+    font-size: 60px;
+    color: $white;
+    text-align: center;
+  }
   svg {
-    overflow: initial;
+      transform: scale(.6) translate(0, -100px);
+      overflow: initial;
+
+      @media screen and (min-width: 1480px) {
+          transform: scale(.8);
+      }
   }
   path {
-    transform-origin: center;
-    transition: .3s fill ease-in-out;
-    stroke: black;
-    stroke-width: .125px;
-    &:hover {
-      fill: white;
-    }
+      transform-origin: center;
+      transition: .3s fill ease-in-out;
+      stroke: black;
+      stroke-width: .125px;
+      &:hover {
+          cursor: pointer;
+      }
   }
-  #dFR {
-    &:hover {
-      cursor: pointer;
-    }
+  .legendaxis {
+      path, line {
+          display: none;
+      }
+      text {
+          fill: $white;
+          font-family: "Montserrat", sans-serif;
+          font-size: 25px;
+      }
   }
-  #legendaxis {
-    path, line {
-      display: none;
-    }
-    text {
-      color: $white;
-    }
+  .legendlabel {
+    fill: $white;
+    font-family: "Montserrat Bold", sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
   }
   .tooltip {
       position: absolute;
-      text-align: center;
-      color: $white;
-      padding: 40px 20px;
-      width: 275px;
-      background-color: $gray;
-      border: 1px solid $white;
-      border-radius: 20px;
       pointer-events: none;
+      z-index: 1;
+
+      .wrapper {
+        opacity: 0;
+      }
+
+      &-content {
+          position: absolute;
+          top: -80px;
+          left: 140px;
+          min-width: 200px;
+          text-align: center;
+          color: $white;
+          padding: 20px 0 10px 0;
+          width: fit-content;
+          background-color: $gray;
+          border-radius: 20px;
+          .countryname {
+            font-family: 'Calistoga', sans-serif;
+            font-size: 22px;
+          }
+          .athletescount {
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+          }
+      }
+
+      &-indicator {
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-color: transparent;
+
+          .straight {
+            position: absolute;
+            top: -30px;
+            left: 40px;
+            width: 100px;
+            transform: scaleX(0);
+            transform-origin: left;
+            border-bottom: 2px solid;
+          }
+          .diag {
+              position: absolute;
+              top: 5px;
+              left: 6px;
+              width: 50px;
+              transform: scaleX(0);
+              transform-origin: left;
+              border-bottom: 2px dashed;
+          }
+          .circle {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid;
+          }
+
+          &-0 {.straight, .diag, .circle{border-color: $purple-60;}}
+          &-1 {.straight, .diag, .circle{border-color: $purple-50;}}
+          &-2 {.straight, .diag, .circle{border-color: $purple-40;}}
+          &-3 {.straight, .diag, .circle{border-color: $purple-30;}}
+          &-4 {.straight, .diag, .circle{border-color: $purple-20;}}
+          &-5 {.straight, .diag, .circle{border-color: $purple-10;}}
+          &-6 {.straight, .diag, .circle{border-color: $purple-0;}}
+          &-7 {.straight, .diag, .circle{border-color: $white;}}
+      }
   }
 }

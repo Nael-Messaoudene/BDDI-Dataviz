@@ -48,6 +48,7 @@ const AthleteSlider = {
                         '                <div class="athlete-slider-slides-item__id">'+ athlete.id +'</div>'+
                         '                <div class="athlete-slider-slides-item__colorrgba">'+ athlete.color_rgba +'</div>'+
                         '                <div class="athlete-slider-slides-item__colorcode">' + athlete.color_code +'</div>'+
+                        '                <div class="athlete-slider-slides-item__medalicon">' + athlete.medal_icon +'</div>'+
                         '                <div class="athlete-slider-slides-item__town">' + athlete.town +
                         '</div>' +
                         '       </div>');
@@ -68,14 +69,20 @@ const AthleteSlider = {
                         athleteColorRgba: athleteItem.querySelector(".athlete-slider-slides-item__colorrgba").innerText,
                         athleteTown: athleteItem.querySelector(".athlete-slider-slides-item__town").innerText,
                         athleteIcon: athleteItem.querySelector(".athlete-slider-slides-item__imagesrc").src,
+                        athleteMedalIcon: athleteItem.querySelector(".athlete-slider-slides-item__medalicon").innerText,
                     };
 
-                    //console.log(document.querySelector(".athlete-slider-slides-item").innerHTML);
-                    console.log(athleteInfos.athleteIcon);
 
                     athleteItem.addEventListener("click", () => {
                         this.athleteItem.classList.add('athlete-item-visible');
-                        this.athleteItem.insertAdjacentHTML('beforeend', ' <span style="background-color: '+ athleteInfos.athleteColorCode+'" class="athlete-item-close"></span>\n' +
+                        this.athleteItem.insertAdjacentHTML('beforeend', ' <span style="background-color: '+ athleteInfos.athleteColorRgba+'" class="athlete-item-close"><svg xmlns="http://www.w3.org/2000/svg" width="43.863" height="43.863" viewBox="0 0 43.863 43.863">\n' +
+                            '    <defs>\n' +
+                            '        <style>\n' +
+                            '            .cls-1{fill:'+athleteInfos.athleteColorCode+'}\n' +
+                            '        </style>\n' +
+                            '    </defs>\n' +
+                            '    <path id="cross" d="M90.608 87.235l17.917-17.917a2.2 2.2 0 0 0 0-3.106l-.266-.266a2.2 2.2 0 0 0-3.106 0L87.236 83.864 69.319 65.947a2.2 2.2 0 0 0-3.106 0l-.266.266a2.2 2.2 0 0 0 0 3.106l17.918 17.916-17.917 17.917a2.2 2.2 0 0 0 0 3.106l.266.266a2.2 2.2 0 0 0 3.106 0l17.916-17.917 17.917 17.917a2.2 2.2 0 0 0 3.106 0l.266-.266a2.2 2.2 0 0 0 0-3.106z" class="cls-1" transform="translate(-65.305 -65.304)"/>\n' +
+                            '</svg></span>\n' +
                             '        <span class="athlete-item-backgroundname">\n' +
                                          athleteInfos.athleteName +
                             '        </span>\n' +
@@ -95,10 +102,11 @@ const AthleteSlider = {
                             '            </div>\n' +
                             '            <div class="athlete-item-description-datas">\n' +
                             '                <div class="athlete-item-description-medals">\n' +
-                            '                    <p class="athlete-item-description-title">MEDAILLES</p>\n' +
+                            '                    <p class="athlete-item-description-title athlete-item-description-title-margin">MEDAILLES</p>\n' +
+                            '                <img src="' +athleteInfos.athleteMedalIcon+ '.svg' +'">' +
                             '                </div>\n' +
                             '                <div class="athlete-item-description-origin">\n' +
-                            '                    <p class="athlete-item-description-title">ORIGINAIRE DE</p>\n' +
+                            '                    <p class="athlete-item-description-title athlete-item-description-title-margin">ORIGINAIRE DE</p>\n' +
                             '                <img src="' +athleteInfos.athleteTown+ '.svg' +'">' +
                             '                </div>\n' +
                             '            </div>\n' +

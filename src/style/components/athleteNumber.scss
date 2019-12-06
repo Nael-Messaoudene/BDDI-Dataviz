@@ -10,11 +10,11 @@
   flex-direction: column;
 }
 .chart-title{
-  @include title;
-  font-size: 40px;
-  margin: 0;
+  font-family: "Calistoga", sans-serif;
+  font-size: 60px;
   color: $white;
-  width: 760px
+  text-align: center;
+  margin: 0 auto 40px auto;
 }
 .box{
   transform-origin: bottom;
@@ -156,6 +156,7 @@ button:focus {outline:0;}
   padding: 10px 40px;
   text-transform: uppercase;
   opacity:0;
+  cursor: pointer;
   img{
     width: 12px;
     transform: rotate(-90deg);
@@ -191,20 +192,20 @@ button:focus {outline:0;}
 
 .numbergroup-1{
   position: absolute;
-  top: 483px;
+  top: 583px;
   z-index: 7;
   left: 103px;
 }
 .sportgroup-1{
   position: absolute;
   left: 180px;
-  top: 493px;
+  top: 593px;
   z-index: 7;
 }
 
 .numbergroup-2{
   position: absolute;
-  top: 600px;
+  top: 680px;
   z-index: 7;
   left: 318px;
 }
@@ -212,7 +213,7 @@ button:focus {outline:0;}
 .sportgroup-2{
   position: absolute;
   left: 370px;
-  top: 610px;
+  top: 690px;
   z-index: 7;
 }
 

@@ -1,5 +1,7 @@
 import "./style/styles.scss";
+
 import LoadingScreen from "./scripts/loading-screen";
+import Popin from "./scripts/popin";
 import athlete from './scripts/athlete-number'
 import AthleteSlider from "./scripts/athlete-slider";
 
@@ -7,6 +9,7 @@ import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
 import Form from "./scripts/form";
+import homeScreenAnimation from './scripts/homeScreen-animations'
 
 if (window.location.href == "http://localhost:1234/form.html") {
     //Component Form
@@ -25,7 +28,6 @@ if (window.location.href == "http://localhost:1234/form.html") {
     const worldmap = ((worldmap) => {
         worldmap.initMap();
     })(Worldmap);
-
 
 //Component AthleteSlider
     const athleteslider = ((athleteslider) => {
@@ -50,5 +52,3 @@ if (window.location.href == "http://localhost:1234/form.html") {
     };
     App.init();
 }
-
-

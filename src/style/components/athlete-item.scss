@@ -9,12 +9,12 @@
   align-items: center;
   justify-content: center;
   color: white;
-  transform: translateX(-100%);
+  transform: translateY(100%);
   transition: all 1s ease;
   z-index: 2;
 
   &-visible {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 
   &-backgroundname {
@@ -24,22 +24,31 @@
     opacity: 0.03;
     position: absolute;
     left: 68%;
-    line-height: 208px;
+    line-height: 150px;
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
+    text-transform: uppercase;
   }
 
   &-close {
     width: 92px;
     height: 92px;
-    opacity: 0.1;
     background-color: #64dfc7;
     border-radius: 50%;
     position: absolute;
     right: 80px;
     top: 60px;
     transition: all 0.2s ease;
+
+    svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+    }
 
     &:hover {
       cursor: pointer;
@@ -90,6 +99,7 @@
     margin-left: 8%;
     text-align: left;
 
+
     &-sport {
       color: $green;
       font-family: 'Montserrat';
@@ -110,6 +120,10 @@
       @include primarySubtitle();
       font-size: 25px;
       margin: 35px 0 6px 0;
+
+      &-margin {
+        margin-bottom: 15px;
+      }
     }
 
     &-text {
