@@ -9,6 +9,7 @@ import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
 import HomeScreen from "./scripts/homescreen";
+import homeScreenAnimation from './scripts/homeScreen-animations'
 
 //Component LoadingScreen
 const loadingscreen = ((loadingscreen) => {
@@ -47,7 +48,7 @@ const App = {
             new conversation();
             new athlete();
             new Popin();
-
+            new homeScreenAnimation();
         });
     }
 };
