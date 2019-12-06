@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 100px 0;
+  height: 100vh;
 
   .flickity-enabled:focus, .flickity-viewport:focus {
     outline: none;
@@ -63,7 +63,7 @@
     position: relative;
 
     .is-selected {
-
+        pointer-events: all;
 
       .athlete-slider-slides-item__image {
 
@@ -91,6 +91,7 @@
     }
 
     &-item {
+      pointer-events: none;
 
       &:hover {
         cursor: pointer;
@@ -171,5 +172,12 @@
       }
     }
 
+  }
+
+  @include mq-to-1280 {
+    &-title {
+      font-size: 40px;
+      line-height: 45px;
+    }
   }
 }

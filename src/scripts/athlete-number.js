@@ -68,11 +68,6 @@ class athleteNumber {
             .attr("width", barWidth - barPadding)
             .attr("height", 1);
 
-
-
-        console.log(document.querySelector('.numbergroup-1').innerHTML);
-
-
         let transformation = document.querySelector('.btn-transform');
 
         transformation.addEventListener('click', ()=>{
@@ -97,8 +92,8 @@ class athleteNumber {
                     return d.ratioValue ;
                 });
 
-            gsap.to('.number-1',{opacity:1,y: 65,delay:1, duration:1});
-            gsap.to('.sport-1',{opacity:1,y: 25, x:-10,delay:1, duration:1});
+                gsap.to('.number-1',{opacity:1,y: 145,delay:1, duration:1});
+            gsap.to('.sport-1',{opacity:1,y: 105, x:-10,delay:1, duration:1});
 
             setTimeout(function () {
                 document.querySelector('.numbergroup-1').innerText = '3.69%';
@@ -107,8 +102,8 @@ class athleteNumber {
 
 
 
-            gsap.to('.number-2',{opacity:1,y: -80,x:25,delay:1, duration:1});
-            gsap.to('.sport-2',{opacity:1,y: -120, x:-15,delay:1, duration:1});
+            gsap.to('.number-2',{opacity:1,y: 0,x:25,delay:1, duration:1});
+            gsap.to('.sport-2',{opacity:1,y: -45, x:-15,delay:1, duration:1});
 
 
 
@@ -128,12 +123,13 @@ class athleteNumber {
 
         function myCallback () {
 
+            gsap.fromTo('.chart-container',{opacity:0},{opacity:1, duration: 0.5});
             gsap.to('.wrap-content',{duration:0.5,opacity:1});
-            gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:3});
+            gsap.to('.bar-chart',{opacity: 1, duration:0.3, delay:2});
             gsap.to('.btn-transform',{opacity: 1, duration:1, delay:3.5});
             bars.transition()
                 .duration(1000)
-                .delay(3000)
+                .delay(2000)
                 .attr("y", function(d) {
                     return svgHeight - (d.value);  //Height minus data value
                 })
@@ -158,17 +154,13 @@ class athleteNumber {
 
             /// end conversation
 
-            gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
-            gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
-            gsap.to('.numtransform', {opacity:0,delay:4.00000001, duration:1});
+            gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:3, duration:1});
+            gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:3, duration:1});
+            gsap.to('.numtransform', {opacity:0,delay:3.00000000000000, duration:1});
 
-
-            gsap.fromTo('.chart-number',{opacity:0}, {opacity:1, delay:4, duration:1});
-            gsap.fromTo('.chart-sport',{opacity:0}, {opacity:1, delay:4, duration:1});
-            gsap.to('.numtransform', {opacity:0,delay:4.00000001, duration:1});
         }
 
-        ScrollReveal().reveal('.chart-container', {
+        ScrollReveal().reveal('.trigger-athlete', {
             afterReveal: myCallback,
             distance: '10px',
             viewOffset: {

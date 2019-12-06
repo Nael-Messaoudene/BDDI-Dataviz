@@ -39,6 +39,12 @@
         .panel {
             display: flex;
             margin: 30px auto 0 auto;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+
             .button {
                 padding: 15px 40px;
                 border: 2px solid $white;
@@ -94,4 +100,17 @@
 .popin-evt{
     width: 10px;
     height: 10px;
+}
+#popin-wrap{
+    height: 100vh;
+    z-index: 444;
+    position: relative;
+    .close-popin{
+        position: absolute;
+        right: 60px;
+        top: 60px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
 }

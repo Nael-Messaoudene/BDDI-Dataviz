@@ -8,6 +8,9 @@ import AthleteSlider from "./scripts/athlete-slider";
 import Hearings from "./scripts/hearings";
 import Worldmap from "./scripts/worldmap";
 import conversation from './scripts/conversation'
+import HomeScreen from "./scripts/homescreen";
+import homeScreenAnimation from './scripts/homeScreen-animations'
+
 
 //Component LoadingScreen
 const loadingscreen = ((loadingscreen) => {
@@ -16,11 +19,15 @@ const loadingscreen = ((loadingscreen) => {
     loadingscreen.animateScreens();
 })(LoadingScreen);
 
-//Component LoadingScreen
+//Component HomeScreen
+const homescreen = ((homescreen) => {
+    homescreen.startStory();
+})(HomeScreen);
+
+//Component Worldmap
 const worldmap = ((worldmap) => {
     worldmap.initMap();
 })(Worldmap);
-
 
 //Component AthleteSlider
 const athleteslider = ((athleteslider) => {
@@ -40,8 +47,6 @@ const App = {
         window.addEventListener('DOMContentLoaded', () => {
             new conversation();
             new athlete();
-            new Popin();
-
         });
     }
 };

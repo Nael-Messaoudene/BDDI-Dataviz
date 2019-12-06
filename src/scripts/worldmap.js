@@ -5,6 +5,7 @@ const WorldMap = {
 
     initMap() {
 
+
         function tooltipAnimationHandler(hovered) {
             const circle        = document.querySelector('.circle');
             const diag          = document.querySelector('.diag');
@@ -150,8 +151,35 @@ const WorldMap = {
                         tooltipindicator
                             .attr("class", "tooltip-indicator");
                     });
+
+
             });
+            let france = document.querySelector('#dFR');
+            france.addEventListener('click', function () {
+                let chart = document.querySelector('.chart-container');
+                chart.scrollIntoView();
+            })
+
+            let mx = document.querySelector('#dMX');
+            mx.addEventListener('click', function () {
+                let popin = document.querySelector('#map');
+                TweenLite.to('#map',{display: 'flex', duration:1, opacity:1});
+                TweenLite.to('.popin',{display: 'flex', position:'fixed', duration:1, opacity:1});
+                TweenLite.set('body',{display: 'flex', overflow:'hidden', opacity:1});
+
+                document.querySelector('#closeMapPopin').addEventListener('click',function () {
+
+                    TweenLite.to('#map',{display: 'none', duration:1, opacity:0});
+                    TweenLite.to('.popin',{display: 'none', duration:1, opacity:0});
+
+                    TweenLite.set('body',{overflow:'initial', opacity:1});
+
+                });
+
+            })
+
         });
+
     }
 };
 

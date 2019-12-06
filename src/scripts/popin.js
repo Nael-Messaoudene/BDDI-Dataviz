@@ -1,32 +1,6 @@
 import ScrollReveal from 'scrollreveal';
 import {gsap} from 'gsap';
 
-// const Popin = {
-//     mapPopinHandler(open) {
-//         console.log("mappopin");
-//     },
-//
-//     endPopinHandler(open) {
-//         console.log("endpopin");
-//
-//         function displayEndPopin(){
-//             console.log('rrrrr');
-//             gsap.to('#end',{duration:1, display:'flex'});
-//         }
-//
-//         ScrollReveal().reveal('.end', {
-//             container: '.final-desktop',
-//             afterReveal: displayEndPopin,
-//             distance: '10px',
-//             viewOffset: {
-//                 top: 600,
-//             },
-//             viewFactor: 0
-//         });
-//
-//     }
-// };
-
 class Popin {
 
     constructor() {
@@ -47,7 +21,9 @@ class Popin {
             let index = document.querySelector('#goToIndex');
 
             index.addEventListener('click',function () {
-                gsap.fromTo('.ressources',{opacity:0},{opacity:1, display:'flex', yPercent: -100});
+                gsap.fromTo('.ressources',{opacity:0},{opacity:1, duration:0.4 ,display:'flex', yPercent: -100});
+                gsap.set('body', {overflow: 'hidden'});
+
             });
 
             let closeIndex = document.querySelector('.ressources .close-index');
@@ -57,22 +33,25 @@ class Popin {
             });
 
 
-            let popinbg = document.querySelector('.popin');
+            let closepopin = document.querySelector('.close-popin');
 
-            popinbg.addEventListener('click', function () {
+            closepopin.addEventListener('click', function () {
+                gsap.set('#popin-wrap',{display:'none'});
                 gsap.set('.popin',{display:'none'});
                 gsap.set('body', {overflow: 'initial'});
-
             });
 
 
             let goBack = document.querySelector('#goToTop');
 
             goBack.addEventListener('click', function () {
-                window.scrollTo(0,0);
-            })
 
+                let map = document.querySelector('.worldmap');
+                map.scrollIntoView();
 
+            });
+
+            gsap.set('body', {overflow: 'initial'});
 
         }
 
