@@ -39,6 +39,12 @@
         .panel {
             display: flex;
             margin: 30px auto 0 auto;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+
             .button {
                 padding: 15px 40px;
                 border: 2px solid $white;

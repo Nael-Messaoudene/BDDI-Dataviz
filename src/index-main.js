@@ -11,6 +11,7 @@ import conversation from './scripts/conversation'
 import HomeScreen from "./scripts/homescreen";
 import homeScreenAnimation from './scripts/homeScreen-animations'
 
+
 //Component LoadingScreen
 const loadingscreen = ((loadingscreen) => {
     loadingscreen.goToTop();
@@ -23,11 +24,10 @@ const homescreen = ((homescreen) => {
     homescreen.startStory();
 })(HomeScreen);
 
-//Component LoadingScreen
+//Component Worldmap
 const worldmap = ((worldmap) => {
     worldmap.initMap();
 })(Worldmap);
-
 
 //Component AthleteSlider
 const athleteslider = ((athleteslider) => {
@@ -47,8 +47,6 @@ const App = {
         window.addEventListener('DOMContentLoaded', () => {
             new conversation();
             new athlete();
-            new Popin();
-            new homeScreenAnimation();
         });
     }
 };
